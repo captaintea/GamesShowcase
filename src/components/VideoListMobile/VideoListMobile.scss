@@ -1,0 +1,45 @@
+.VideoListMobile {
+	background: #FFFFFF;
+
+	&__image-wrapper {
+		margin-bottom: 10px;
+	}
+
+	&__item-image {
+		width: 243px;
+		height: 136px;
+		border-radius: 6px;
+		position: relative;
+	}
+
+	&__duration {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		background: rgba(0, 0, 0, 0.5);
+		border-radius: 3px;
+		padding: 2px 4px 2px 4px;
+	}
+
+	&__duration-text {
+		display: inline-block;
+		font-size: 11px;
+		color: #FFFFFF;
+		opacity: 1;
+	}
+
+	&__item-title-wrapper {
+
+	}
+
+	&__item-title {
+		font-size: 15px;
+		line-height: 20px;
+		display: inline-block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 240px;
+		white-space: nowrap;
+		color: #000;
+	}
+}

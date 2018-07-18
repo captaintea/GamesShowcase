@@ -1,0 +1,47 @@
+{
+	"name": "app",
+	"version": "0.0.2",
+	"homepage": "./",
+	"private": true,
+	"dependencies": {
+		"@happysanta/vk-sdk": "^1.0.1",
+		"i18next": "^10.0.7",
+		"node-sass-chokidar": "0.0.3",
+		"npm-run-all": "^4.1.2",
+		"query-string": "^5.0.1",
+		"react": "^16.1.0",
+		"react-dom": "^16.1.0",
+		"react-redux": "^5.0.6",
+		"react-scripts": "1.0.17",
+		"react-slick": "^0.23.1",
+		"redux": "^3.7.2",
+		"redux-thunk": "^2.2.0",
+		"slick-carousel": "^1.8.1"
+	},
+	"scripts": {
+		"make:component": "node src/tools/cli/make-component.js",
+		"build-css": "node-sass-chokidar src/ -o src/",
+		"watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+		"start-js": "react-scripts start",
+		"start": "npm-run-all -p watch-css start-js",
+		"build-js": "react-scripts build",
+		"build": "npm-run-all build-css build-js",
+		"eject": "react-scripts eject"
+	},
+	"proxy": {
+		"/app": {
+			"target": "https://127.0.0.1:3000/",
+			"secure": false,
+			"pathRewrite": {
+				"^/app": ""
+			}
+		},
+		"/mobile": {
+			"target": "https://127.0.0.1:3000/",
+			"secure": false,
+			"pathRewrite": {
+				"^/mobile": ""
+			}
+		}
+	}
+}

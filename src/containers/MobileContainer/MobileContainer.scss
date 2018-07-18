@@ -1,0 +1,11 @@
+.MobileContainer {
+	background: #EBEDF0;
+
+	&__wrapper {
+		overflow: auto;
+
+		@media only screen and (max-width: 768px) {
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+}

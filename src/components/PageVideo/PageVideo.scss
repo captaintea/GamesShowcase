@@ -1,0 +1,53 @@
+.PageVideo {
+	background: #FFFFFF;
+
+	&__list {
+		padding: 25px 19px 5px 19px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin: 0 5px 27px 5px;
+		display: inline-block;
+		width: 220px;
+	}
+
+	&__item-image {
+		width: 220px;
+		height: 122px;
+		border-radius: 4px;
+		position: relative;
+		margin-bottom: 8px;
+	}
+
+	&__duration {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		background: rgba(0, 0, 0, 0.5);
+		border-radius: 3px;
+		padding: 4px 6px 4px 6px;
+	}
+
+	&__duration-text {
+		font-size: 13px;
+		font-weight: 500;
+		color: #FFFFFF;
+		text-align: center;
+		display: inline-block;
+		opacity: 1;
+	}
+
+	&__item-title-wrapper {
+
+	}
+
+	&__item-title {
+		font-size: 13px;
+		letter-spacing: 0;
+		text-align: left;
+		line-height: 18px;
+		color: #000;
+	}
+}

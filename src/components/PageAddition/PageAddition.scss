@@ -1,0 +1,43 @@
+.PageAddition {
+	background: #FFFFFF;
+
+	&__list {
+		padding: 25px 19px 6px 19px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		width: 160px;
+		margin: 0 6px 22px 6px;
+		display: inline-block;
+	}
+
+	&__image-wrapper {
+		margin-bottom: 8px;
+	}
+
+	&__item-image {
+		width: 160px;
+		height: 160px;
+		border-radius: 4px;
+		position: relative;
+	}
+
+	&__item-title-wrapper {
+
+	}
+
+	&__item-title {
+		font-size: 13px;
+		color: #000000;
+		line-height: 18px;
+	}
+
+	&__item-price {
+		font-size: 13px;
+		color: #222222;
+		line-height: 18px;
+		font-weight: 600;
+	}
+}

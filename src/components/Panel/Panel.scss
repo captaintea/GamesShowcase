@@ -1,0 +1,54 @@
+.Panel {
+	padding: 0 25px 25px;
+	background: #FFFFFF;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+	box-shadow: 0 1px 0 0 #D7D8DB, 0 0 0 1px #E3E4E8;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 18px 0;
+	}
+
+	&__header-left {
+		display: flex;
+		align-items: center;
+	}
+
+	&__title {
+		line-height: 19px;
+		font-size: 16px;
+	}
+
+	&__count {
+		line-height: 19px;
+
+		font-size: 14px;
+		color: #939393;
+	}
+
+	&__title + &__count {
+		margin-left: 6px;
+	}
+
+	&__link {
+		color: #2A5885;
+		display: inline-block;
+		cursor: pointer;
+		line-height: 18px;
+
+		&:after {
+			content: '';
+			width: 8px;
+			height: 8px;
+			background: url("./img/arrow.svg") no-repeat center right;
+			background-size: contain;
+			display: inline-block;
+			line-height: 15px;
+			padding-left: 4px;
+
+		}
+	}
+}

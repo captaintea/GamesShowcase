@@ -1,0 +1,49 @@
+.AdditionList {
+	background: #FFFFFF;
+
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__item {
+		margin-right: 12px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__image-wrapper {
+		margin-bottom: 7px;
+	}
+
+	&__item-image {
+		width: 126px;
+		height: 126px;
+		border-radius: 4px;
+		position: relative;
+	}
+
+	&__item-title-wrapper {
+
+	}
+
+	&__item-title {
+		font-size: 13px;
+		color: #000000 !important;
+		line-height: 18px;
+		display: inline-block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 118px;
+		white-space: nowrap;
+	}
+
+	&__item-price {
+		font-size: 13px;
+		color: #222222;
+		line-height: 18px;
+		font-weight: 600;
+	}
+}

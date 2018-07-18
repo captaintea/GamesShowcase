@@ -1,0 +1,52 @@
+.PageAdditionMobile {
+	background: #FFFFFF;
+
+	&__wrapper {
+		padding: 8px 10.5px;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	&__item {
+		padding: 8px 5.5px;
+		box-sizing: border-box;
+		vertical-align: top;
+	}
+
+	&__image-wrapper {
+		height: 0;
+		overflow: hidden;
+		padding-top: 100%;
+		position: relative;
+		margin-bottom: 10px;
+	}
+
+	&__item-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 6px;
+
+	}
+
+	&__item-title-wrapper {
+
+	}
+
+	&__item-title {
+		font-size: 15px;
+		line-height: 20px;
+		color: #000;
+	}
+
+	&__item-price {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 22px;
+	}
+
+}

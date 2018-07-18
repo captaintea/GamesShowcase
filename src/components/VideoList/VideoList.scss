@@ -1,0 +1,62 @@
+.VideoList {
+	background: #FFFFFF;
+
+	&__image-wrapper {
+		margin-bottom: 7px;
+	}
+
+	&__item-image {
+		width: 218px;
+		height: 147px;
+		border-radius: 4px;
+		position: relative;
+	}
+
+	&__duration {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		background: rgba(0, 0, 0, 0.5);
+		border-radius: 3px;
+		padding: 4px 6px 4px 6px;
+	}
+
+	&__duration-text {
+		font-size: 13px;
+		font-weight: 500;
+		color: #FFFFFF;
+		text-align: center;
+		display: inline-block;
+		opacity: 1;
+	}
+
+	&__item-title-wrapper {
+
+	}
+
+	&__item-title {
+		font-size: 13px;
+		letter-spacing: 0;
+		text-align: left;
+		line-height: 18px;
+		display: inline-block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 210px;
+		white-space: nowrap;
+		color: #000 !important;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__item {
+		margin-right: 12px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

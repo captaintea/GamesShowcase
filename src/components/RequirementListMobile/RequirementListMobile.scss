@@ -1,0 +1,31 @@
+.RequirementListMobile {
+
+	&__list {
+		overflow: hidden;
+	}
+
+	&__item {
+		padding-bottom: 16px;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 21px;
+	}
+
+	&__description {
+		font-size: 15px;
+		line-height: 21px;
+	}
+
+	&__extend {
+		font-size: 15px;
+		color: #45678F;
+		font-weight: 500;
+	}
+}

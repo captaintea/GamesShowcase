@@ -1,0 +1,17 @@
+.DesktopContainer {
+	background: #EBEDF0;
+
+	&__divider {
+		background: #FFFFFF;
+		width: 100%;
+		height: 1px;
+		padding: 0 25px;
+		box-sizing: border-box;
+	}
+
+	&__line {
+		background: #E7E8EC;
+		width: 100%;
+		height: 1px;
+	}
+}

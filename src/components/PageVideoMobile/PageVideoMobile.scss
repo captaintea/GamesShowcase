@@ -1,0 +1,49 @@
+.PageVideoMobile {
+	background: #FFFFFF;
+
+	&__wrapper {
+		padding: 16px;
+	}
+
+	&__image-wrapper {
+		margin-bottom: 10px;
+	}
+
+	&__item-image {
+		width: 130px;
+		height: 80px;
+		border-radius: 6px;
+		position: relative;
+		margin-bottom: 16px;
+	}
+
+	&__duration {
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		background: rgba(0, 0, 0, 0.5);
+		border-radius: 3px;
+		padding: 2px 4px 2px 4px;
+	}
+
+	&__duration-text {
+		display: inline-block;
+		font-size: 11px;
+		color: #FFFFFF;
+		opacity: 1;
+	}
+
+	&__item-title {
+		padding-left: 12px;
+		font-size: 15px;
+		color: #000000;
+		line-height: 20px;
+		margin-bottom: 16px;
+		max-height: 80px;
+		overflow: hidden;
+	}
+
+	a {
+		text-decoration: none !important;
+	}
+}

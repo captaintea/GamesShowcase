@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>&gt;</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Player" transform="translate(-422.000000, -275.000000)">
+            <g id="Привет" transform="translate(310.000000, 70.000000)">
+                <g id="Group" transform="translate(0.000000, 75.000000)">
+                    <g id="заголовок-заголовок" transform="translate(0.000000, 110.000000)">
+                        <g id="&gt;" transform="translate(115.000000, 25.000000) rotate(-90.000000) translate(-115.000000, -25.000000) translate(105.000000, 15.000000)">
+                            <g id="Group">
+                                <polygon id="Shape" points="0 0 20 0 20 20 0 20"></polygon>
+                                <polygon id="Shape" fill="#C5C6C9" points="13.825 7 10 10.708502 6.175 7 5 8.1417004 10 13 15 8.1417004"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

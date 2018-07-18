@@ -1,0 +1,53 @@
+.Breadcrumbs {
+	background: #F0F2F5;
+	box-shadow: 0 -1px 0 0 #E7E8EC, inset 0 -1px 0 0 #E7E8EC;
+	padding: 15px 25px 15px;
+	overflow: auto;
+	width: 100%;
+	box-sizing: border-box;
+	white-space: nowrap;
+
+	&__item-wrapper {
+		display: inline-block;
+		white-space: nowrap;
+	}
+
+	&__arrow {
+		background: url('./img/arrow.svg'), no-repeat, center;
+		width: 20px;
+		height: 20px;
+		margin: 0 7px;
+	}
+
+	&__item {
+		font-size: 16px;
+		text-align: left;
+		display: inline-block;
+		line-height: 20px;
+		white-space: nowrap;
+
+		&--linked {
+			color: #656565;
+			cursor: pointer;
+
+			&:after {
+				content: '›';
+				text-align: center;
+				width: 20px;
+				height: 20px;
+				margin: 0 7px;
+				display: inline-block;
+			}
+		}
+
+		&--final {
+			color: #000000;
+			padding-right: 15px;
+			display: inline-block;
+		}
+	}
+
+	&--mobile {
+		padding: 15px;
+	}
+}

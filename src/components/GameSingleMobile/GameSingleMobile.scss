@@ -1,0 +1,98 @@
+.GameSingleMobile {
+	background: #FFFFFF;
+	padding: 16px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+
+	&__item-image-wrapper {
+		position: relative;
+	}
+
+	&__item-image {
+		width: 96px;
+		height: 96px;
+		border-radius: 6px;
+	}
+
+	&__discount-badge {
+		width: 42px;
+		box-sizing: border-box;
+		position: absolute;
+		top: 4px;
+		right: -6px;
+		padding: 4px;
+		background: #E64646;
+		border-radius: 6px;
+		font-weight: 700;
+		font-size: 13px;
+		color: #FFFFFF;
+		text-align: center;
+	}
+
+	&__item-info {
+		padding-left: 16px;
+	}
+
+	&__item-title {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 21px;
+		padding-bottom: 1px;
+	}
+
+	&__item-description {
+		font-size: 14px;
+		color: #71757A;
+		line-height: 21px;
+		padding-bottom: 7px;
+	}
+
+	&__item-price {
+		font-weight: 700;
+		font-size: 17px;
+		color: #222222;
+
+		&--discounted {
+			background: #E64646;
+			border-radius: 100px;
+			padding: 4px 7px;
+			font-size: 15px;
+			color: #FFFFFF;
+			display: inline-block;
+		}
+
+		&--old {
+			text-decoration: line-through;
+			font-size: 14px;
+			color: #909499;
+			line-height: 21px;
+			margin-left: 8px;
+			display: inline-block;
+		}
+	}
+
+	table {
+		margin-bottom: 15px;
+	}
+
+	&__controls {
+		margin-bottom: 15px;
+
+		button {
+			width: 100%;
+		}
+	}
+
+	&__description {
+		font-size: 15px;
+		color: #000000;
+		line-height: 21px;
+		overflow: hidden;
+	}
+
+	&__extend {
+		font-size: 15px;
+		color: #45678F;
+		font-weight: 500;
+	}
+}

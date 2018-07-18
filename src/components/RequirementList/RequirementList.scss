@@ -1,0 +1,52 @@
+.RequirementList {
+	background: #FFFFFF;
+	margin-bottom: 15px;
+	box-shadow: 0 1px 0 0 #D7D8DB, 0 0 0 1px #E3E4E8;
+
+	&__list {
+		overflow: hidden;
+		padding: 0 25px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		padding-bottom: 16px;
+		width: 326px;
+
+		&:last-child {
+			padding-bottom: 20px;
+		}
+	}
+
+	&__title {
+		line-height: 19px;
+		font-size: 16px;
+		padding: 18px 25px;
+	}
+
+	&__item-title {
+		color: #222222;
+		font-weight: 500;
+		line-height: 21px;
+	}
+
+	&__item-description {
+		line-height: 20px;
+	}
+
+	&__extend {
+		border-top: 1px solid #E7E8EC;
+		color: #2A5885;
+		text-align: center;
+		padding-top: 13px;
+		padding-bottom: 14px;
+		width: 100%;
+		cursor: pointer;
+		margin-top: 20px;
+
+		&:hover {
+			background-color: #f0f2f5;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.ShareButton {
+	border-top: 1px solid #E7E8EC;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	margin-top: 24px;
+	margin-bottom: -25px;
+	box-sizing: border-box;
+
+	&__share-icon {
+		width: 17px;
+		height: 17px;
+		display: inline-block;
+		background: url("./img/share.svg") no-repeat center center;
+		margin-right: 4px;
+	}
+
+	button {
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+}

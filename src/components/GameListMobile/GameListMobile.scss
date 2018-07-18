@@ -1,0 +1,136 @@
+.GameListMobile {
+	$imageDimension: 80px;
+
+	table {
+		margin-bottom: 8px;
+	}
+
+	&__description {
+		margin-top: -16px;
+		font-size: 14px;
+		line-height: 20px;
+		padding-bottom: 19px;
+	}
+
+	&__list {
+
+	}
+
+	&__item {
+		padding-bottom: 20px;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&__item-image-wrapper {
+		position: relative;
+		width: $imageDimension;
+		vertical-align: top;
+	}
+
+	&__item-image {
+		width: $imageDimension;
+		height: $imageDimension;
+		border-radius: 6px;
+	}
+
+	&__discount-badge {
+		width: 42px;
+		box-sizing: border-box;
+		position: absolute;
+		top: 4px;
+		right: -6px;
+		background: #E64646;
+		border-radius: 6px;
+		font-weight: 700;
+		font-size: 13px;
+		color: #FFFFFF;
+		text-align: center;
+		padding: 3px;
+	}
+
+	&__item-info {
+		padding-left: 12px;
+		vertical-align: top;
+	}
+
+	&__item-title {
+		height: 50px;
+		overflow: hidden;
+
+		span {
+			display: inline-block;
+			font-size: 16px;
+			line-height: 17px;
+			padding-bottom: 1px;
+		}
+	}
+
+	&__item-bottom {
+		display: table;
+		height: 30px;
+		white-space: nowrap;
+	}
+
+	&__item-price {
+		font-weight: 700;
+		font-size: 17px;
+		color: #222222;
+		display: table-cell;
+		white-space: nowrap;
+
+		&--discounted {
+			font-weight: 700;
+			font-size: 15px;
+			color: #FFFFFF;
+			background: #E64646;
+			border-radius: 100px;
+			padding: 4px 8px;
+			display: inline-block;
+
+			@media (max-width: 320px) {
+				font-size: 14px;
+			}
+		}
+
+		&--old {
+			color: #909499;
+			font-size: 14px;
+			line-height: 21px;
+			text-decoration: line-through;
+			margin-left: 8px;
+			display: inline-block;
+			@media (max-width: 320px) {
+				font-size: 12px;
+			}
+		}
+	}
+
+	button {
+		padding: 6px 16px 7px 16px;
+		text-align: center;
+		margin: 0;
+
+		&.small, &.small:hover {
+			background-image: url("./img/buy.svg") !important;
+			background-position: center center !important;
+			background-size: 18px 17px !important;
+			background-repeat: no-repeat !important;
+			height: 30px;
+			width: 30px;
+		}
+	}
+
+	&__controls {
+		width: 100%;
+		text-align: right;
+		display: table-cell;
+	}
+
+	&__buy-icon {
+		background: url("./img/buy.svg") no-repeat center center;
+		display: inline-block;
+	}
+}
