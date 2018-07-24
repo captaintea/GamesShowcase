@@ -12,7 +12,8 @@
 Посмотреть развернутый шаблон можно тут:
 [https://vk.com/app6635151_-167272536](https://vk.com/app6635151_-167272536)
 
-Шаблон витрины написан на реакте. При разработке использован [Create React App](https://github.com/facebook/create-react-app)
+Шаблон витрины написан на реакте + redux. При разработке использован [Create React App](https://github.com/facebook/create-react-app) <br/>
+Также использован [SDK для приложений сообществ](https://github.com/HappySanta/vk-sdk-js)
 
 ## Для начала разработки:
 
