@@ -58,7 +58,7 @@ function initData() {
 			button_text_mobile: 'Купить',
 		},
 		{
-			name: 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS',
+			name: 'ONE ROW TITLE',
 			description: 'Игра',
 			price: 1999,
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',

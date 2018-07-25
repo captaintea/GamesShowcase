@@ -57,7 +57,7 @@
 	}
 
 	&__item-title {
-		height: 50px;
+		max-height: 50px;
 		overflow: hidden;
 
 		span {
@@ -66,6 +66,20 @@
 			line-height: 17px;
 			padding-bottom: 1px;
 		}
+	}
+
+	&__item-description {
+		padding-bottom: 8px;
+		span {
+			font-size: 14px;
+			color: #71757A;
+			line-height: 18px;
+			display: inline-block;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
 	}
 
 	&__item-bottom {
