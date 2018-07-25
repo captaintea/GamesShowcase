@@ -95,7 +95,7 @@ function initData() {
 			url: 'https://vk.com/video-128033123_456242381',
 			preview_image_url: 'https://sun9-3.userapi.com/c848520/v848520263/27e52/GgwaqxXSbdQ.jpg',
 			title: 'Полуфиналы: как это было',
-			duration: 32,
+			duration: 3850,
 		},
 		{
 			url: 'https://vk.com/video?z=video-24136539_456255850%2Fpl_cat_football_2018_block',
@@ -113,7 +113,7 @@ function initData() {
 			url: 'https://vk.com/video?z=video-24136539_456255870%2Fpl_cat_football_2018_block',
 			preview_image_url: 'https://sun9-7.userapi.com/c834401/v834401976/1886f4/RufYpF5YY1Q.jpg',
 			title: 'ХОРВАТИЯ - АНГЛИЯ! 1:1! ВТОРОЙ ТАЙМ',
-			duration: 97,
+			duration: 9,
 		},
 		{
 			url: 'https://vk.com/video?z=video-24136539_456255870%2Fpl_cat_football_2018_block',

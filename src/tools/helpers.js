@@ -73,10 +73,9 @@ export function getTimeForUser(timeInSeconds, skipHoursIfNeed = false) {
 	let hours = Math.floor(timeInSeconds / (60 * 60))
 	let minutes = Math.floor(timeInSeconds / 60) % 60
 	let seconds = Math.floor(timeInSeconds) % 60
-	hours = hours < 10 ? '0' + hours : hours
-	minutes = minutes < 10 ? '0' + minutes : minutes
+	minutes = hours && minutes < 10 ? '0' + minutes : minutes
 	seconds = seconds < 10 ? '0' + seconds : seconds
-	if (hours === '00' && skipHoursIfNeed) {
+	if (hours === 0 && skipHoursIfNeed) {
 		return minutes + ':' + seconds
 	} else {
 		return hours + ':' + minutes + ':' + seconds
