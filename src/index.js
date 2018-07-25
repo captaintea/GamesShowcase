@@ -59,15 +59,14 @@ function initData() {
 		},
 		{
 			name: 'ONE ROW TITLE',
-			description: 'Игра',
 			price: 1999,
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
 			button_text: 'Купить игру',
 			button_text_mobile: 'Купить',
 		},
 		{
-			name: 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS',
-			description: 'Игра',
+			name: 'ONE ROW',
+			description: 'Description',
 			price: 1999,
 			discount: 15,
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
@@ -78,7 +77,9 @@ function initData() {
 	let gameTitle = 'Far Cry 5'
 	let shareText = 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS - отличная игра'
 	let shareImageUrl = 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg'
-	let gameDescription = 'Округ Хоуп в штате Монтана захвачен фанатиками культа Врата Эдема. Дайте отпор Иосифу Сиду и его братьям. Разожгите огонь сопротивления.'
+	let gameDescription = 'Округ Хоуп в штате Монтана захвачен фанатиками культа Врата Эдема. ' +
+		'Дайте отпор Иосифу Сиду и его братьям. Разожгите огонь сопротивления. Дайте отпор Иосифу Сиду и его братьям.' +
+		' Разожгите огонь сопротивления.'
 	store.dispatch(initGameList(gameTitle, gameDescription, gameListMock, shareText, shareImageUrl))
 	let infoTitle = 'Информация об игре'
 	let infoListMock = [

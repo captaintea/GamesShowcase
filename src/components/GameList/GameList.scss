@@ -4,6 +4,10 @@
 		margin-top: -16px;
 		font-size: 13px;
 		line-height: 19px;
+		overflow: hidden;
+	}
+
+	&__description-wrapper {
 		padding-bottom: 27px;
 	}
 
@@ -155,5 +159,11 @@
 		padding: 5px;
 		margin-top: 24px;
 		margin-bottom: -25px;
+	}
+
+	&__extend {
+		font-size: 13px;
+		color: #45678F;
+		cursor: pointer;
 	}
 }

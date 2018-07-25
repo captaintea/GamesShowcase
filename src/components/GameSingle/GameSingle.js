@@ -3,6 +3,7 @@ import {connect} from "react-redux"
 import "./GameSingle.css"
 import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
+import {nToBr} from "../../tools/helpers"
 
 const MAX_RETRACTED_HEIGHT = 57
 
@@ -91,7 +92,7 @@ class GameSingle extends Component {
 			<div className="GameSingle__description"
 				 ref={extendable => this.extendable = extendable}
 				 style={listDescriptionStyle}>
-				{description}
+				{nToBr(description)}
 			</div>
 			{!isDescriptionExtended ?
 				<div className="GameSingle__extend"

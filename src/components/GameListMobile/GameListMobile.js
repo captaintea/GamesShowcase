@@ -3,15 +3,27 @@ import {connect} from "react-redux"
 import "./GameListMobile.css"
 import PanelMobile from "../PanelMobile/PanelMobile"
 import ShareButtonMobile from "../ShareButtonMobile/ShareButtonMobile"
+import {nToBr} from "../../tools/helpers"
+import L from "../../lang/L"
+import {setDescriptionExtended} from "../../modules/GameList"
 
 const ITEM_TITLE_ONE_ROW_HEIGHT = 18
-const TWO_ROW_TITLE_HEIGHT = 50
+const MAX_RETRACTED_HEIGHT = 63
+const EXTEND_TEXT_HEIGHT = 17
 
 class GameListMobile extends Component {
 
 	state = {
 		loadedImageKeys: [],
 		titleHeightList: [],
+	}
+
+	componentDidMount() {
+		if (this.extendable) {
+			if ((this.extendable.clientHeight - EXTEND_TEXT_HEIGHT) > MAX_RETRACTED_HEIGHT) {
+				this.props.setDescriptionExtended(false)
+			}
+		}
 	}
 
 	getItemInfoMaxWidth() {
@@ -28,26 +40,34 @@ class GameListMobile extends Component {
 		this.setState({loadedImageKeys: this.state.loadedImageKeys.concat([key])})
 	}
 
-	rememberTitleHeight(titleRef) {
-		if (titleRef && this.state.titleHeightList.indexOf(titleRef) === -1) {
-			this.setState({titleHeightList: this.state.titleHeightList.concat([titleRef])})
+	rememberTitleHeight(titleRef, key) {
+		if (titleRef && !this.state.titleHeightList[key]) {
+			let newList = this.state.titleHeightList.concat([])
+			newList[key] = titleRef.clientHeight
+			this.setState({titleHeightList: newList})
 		}
 	}
 
 	render() {
 		let {title, description, list, shareText, shareImageUrl} = this.props.gameList
+		let descriptionStyle = !this.props.isDescriptionExtended ? {maxHeight: MAX_RETRACTED_HEIGHT} : {}
 		return <div className="GameListMobile">
 			<PanelMobile title={title}>
-				<div className="GameListMobile__description">
-					{description}
+				<div className="GameListMobile__description-wrapper">
+					<div className="GameListMobile__description"
+						 ref={extendable => this.extendable = extendable}
+						 style={descriptionStyle}>
+						{nToBr(description)}
+					</div>
+					{!this.props.isDescriptionExtended ?
+						<div className="GameListMobile__extend"
+							 onClick={() => this.props.setDescriptionExtended(true)}>
+							{L.t('extend')}
+						</div> : null}
 				</div>
 				<div className="GameListMobile__list">
 					{list.map((game, key) => {
-						let titleRef = this.state.titleHeightList[key]
-						let titleStyle = {}
-						if (titleRef && titleRef.clientHeight > ITEM_TITLE_ONE_ROW_HEIGHT) {
-							titleStyle.height = TWO_ROW_TITLE_HEIGHT
-						}
+						let titleHeight = this.state.titleHeightList[key]
 						return <div className="GameListMobile__item" key={key}>
 							<table cellPadding={0} cellSpacing={0}>
 								<tbody>
@@ -64,13 +84,13 @@ class GameListMobile extends Component {
 									</td>
 									<td className="GameListMobile__item-info" style={{width: this.getItemInfoMaxWidth()}}>
 										<div className="GameListMobile__item-title"
-											 style={titleStyle}
-											 ref={ref => this.rememberTitleHeight(ref)}>
+											 ref={ref => this.rememberTitleHeight(ref, key)}>
 											<span style={{maxWidth: this.getItemInfoMaxWidth()}}>
 												{game.name}
 											</span>
 										</div>
-										{titleRef && titleRef.clientHeight <= ITEM_TITLE_ONE_ROW_HEIGHT ?
+										{game.getInitialDescription() && game.getInitialDescription().length &&
+										titleHeight && titleHeight <= ITEM_TITLE_ONE_ROW_HEIGHT ?
 											<div className="GameListMobile__item-description">
 												<span style={{maxWidth: this.getItemInfoMaxWidth()}}>
 													{game.description}
@@ -113,7 +133,8 @@ class GameListMobile extends Component {
 function map(state) {
 	return {
 		gameList: state.GameList,
+		isDescriptionExtended: state.GameList.isDescriptionExtended,
 	}
 }
 
-export default connect(map, {})(GameListMobile)
+export default connect(map, {setDescriptionExtended})(GameListMobile)

@@ -4,6 +4,7 @@ import "./GameSingleMobile.css"
 import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
 import ShareButtonMobile from "../ShareButtonMobile/ShareButtonMobile"
+import {nToBr} from "../../tools/helpers"
 
 const MAX_RETRACTED_HEIGHT = 63
 
@@ -77,7 +78,7 @@ class GameSingleMobile extends Component {
 			<div className="GameSingleMobile__description"
 				 ref={extendable => this.extendable = extendable}
 				 style={listDescriptionStyle}>
-				{description}
+				{nToBr(description)}
 			</div>
 			{!isDescriptionExtended ?
 				<div className="GameSingleMobile__extend"

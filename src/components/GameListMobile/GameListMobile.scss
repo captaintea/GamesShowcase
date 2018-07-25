@@ -5,10 +5,18 @@
 		margin-bottom: 8px;
 	}
 
+	td {
+		font-size: 0;
+	}
+
 	&__description {
 		margin-top: -16px;
 		font-size: 14px;
 		line-height: 20px;
+		overflow: hidden;
+	}
+
+	&__description-wrapper {
 		padding-bottom: 19px;
 	}
 
@@ -53,7 +61,7 @@
 
 	&__item-info {
 		padding-left: 12px;
-		vertical-align: top;
+		vertical-align: middle;
 	}
 
 	&__item-title {
@@ -69,7 +77,9 @@
 	}
 
 	&__item-description {
-		padding-bottom: 8px;
+		padding-bottom: 2px;
+		box-sizing: border-box;
+
 		span {
 			font-size: 14px;
 			color: #71757A;
@@ -146,5 +156,11 @@
 	&__buy-icon {
 		background: url("./img/buy.svg") no-repeat center center;
 		display: inline-block;
+	}
+
+	&__extend {
+		font-size: 15px;
+		color: #45678F;
+		font-weight: 500;
 	}
 }

@@ -8,6 +8,7 @@
 		position: relative;
 		vertical-align: top;
 		width: $imageDimension;
+		font-size: 0;
 	}
 
 	&__item-image {
@@ -34,7 +35,7 @@
 	&__item-info {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
 		height: $imageDimension;
 		padding-left: 15px;
 	}
@@ -61,13 +62,18 @@
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 21px;
-		padding-bottom: 4px;
+		padding-bottom: 12px;
 	}
 
 	&__item-description {
 		font-size: 13px;
 		color: #656565;
 		line-height: 21px;
+	}
+
+	&__item-title + &__item-description {
+		margin-top: -14px;
+		padding-bottom: 10px;
 	}
 
 	&__item-price {

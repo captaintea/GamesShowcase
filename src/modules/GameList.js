@@ -1,4 +1,5 @@
 import {getMoneyFormat} from "../tools/money"
+import {nToBr} from "../tools/helpers"
 
 export class GameItem {
 
@@ -29,7 +30,7 @@ export class GameItem {
 	}
 
 	get description() {
-		return this._description
+		return nToBr(this._description)
 	}
 
 	get price() {
@@ -58,6 +59,10 @@ export class GameItem {
 
 	getDiscountedPrice() {
 		return getMoneyFormat(Math.ceil(this._price - this._price * this._discount * 0.01), '0 ₽')
+	}
+
+	getInitialDescription() {
+		return this._description
 	}
 }
 
