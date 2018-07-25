@@ -4,6 +4,10 @@
 		padding: 0 5px;
 		outline: none;
 		box-sizing: border-box;
+
+		&--single {
+			padding: 0;
+		}
 	}
 
 	&__image {

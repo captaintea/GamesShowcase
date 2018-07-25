@@ -29,6 +29,10 @@ function SamplePrevArrow(props) {
 
 class Carousel extends Component {
 
+	isSingleImage() {
+		return this.props.list.length === 1
+	}
+
 	render() {
 		let {list} = this.props
 		let settings = {
@@ -40,7 +44,7 @@ class Carousel extends Component {
 			},
 			dots: true,
 			infinite: true,
-			centerMode: true,
+			centerMode: !this.isSingleImage(),
 			className: "center",
 			centerPadding: "89px",
 			speed: 500,
@@ -57,7 +61,8 @@ class Carousel extends Component {
 						background: `url(${cover.url}) no-repeat center center`,
 						backgroundSize: 'cover',
 					}
-					return <div className="Carousel__image-wrapper" key={key}>
+					return <div className={"Carousel__image-wrapper" +
+					(this.isSingleImage() ? ' Carousel__image-wrapper--single' : '')} key={key}>
 						<div className="Carousel__image">
 							<div className="Carousel__image-inner" style={style}>
 
