@@ -14,6 +14,7 @@ import RequirementList from "../../components/RequirementList/RequirementList"
 import CommunityList from "../../components/CommunityList/CommunityList"
 import Law from "../../components/Law/Law"
 import GameList from "../../components/GameList/GameList"
+import CommonInfoList from "../../components/CommonInfoList/CommonInfoList"
 
 class DesktopContainer extends Component {
 
@@ -99,6 +100,7 @@ class DesktopContainer extends Component {
 			<VideoList/>
 			<AdditionList/>
 			<RequirementList/>
+			<CommonInfoList/>
 			<CommunityList/>
 			<Law/>
 		</div>
