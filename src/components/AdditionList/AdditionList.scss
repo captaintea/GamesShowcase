@@ -3,11 +3,11 @@
 
 	&__list {
 		display: flex;
-		align-items: center;
+		align-items: flex-start
 	}
 
 	&__item {
-		margin-right: 12px;
+		margin-right: 13px;
 
 		&:last-child {
 			margin-right: 0;
@@ -19,8 +19,8 @@
 	}
 
 	&__item-image {
-		width: 126px;
-		height: 126px;
+		width: 160px;
+		height: 160px;
 		border-radius: 4px;
 		position: relative;
 	}
@@ -34,10 +34,10 @@
 		color: #000000 !important;
 		line-height: 18px;
 		display: inline-block;
-		text-overflow: ellipsis;
+		max-width: 160px;
+		white-space: normal;
+		max-height: 36px;
 		overflow: hidden;
-		max-width: 118px;
-		white-space: nowrap;
 	}
 
 	&__item-price {

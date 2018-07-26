@@ -20,10 +20,10 @@
 		font-size: 15px;
 		line-height: 20px;
 		display: inline-block;
-		text-overflow: ellipsis;
+		max-width: 136px;
+		white-space: normal;
+		max-height: 40px;
 		overflow: hidden;
-		max-width: 130px;
-		white-space: nowrap;
 		color: #000;
 	}
 

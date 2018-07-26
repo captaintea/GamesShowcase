@@ -39,7 +39,7 @@ class AdditionList extends Component {
 
 	render() {
 		let {list, title} = this.props
-		let shortList = list.slice(0, 5)
+		let shortList = list.slice(0, 4)
 		return <div className="AdditionList">
 			<Panel title={title} showAll={() => this.onShowAll()} count={list.length}>
 				<div className="AdditionList__list">
