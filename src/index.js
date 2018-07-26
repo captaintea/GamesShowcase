@@ -17,6 +17,7 @@ import {initRequirementList} from "./modules/RequirementList"
 import {initLaw} from "./modules/LawModule"
 import {initCommunityList} from "./modules/CommunityList"
 import {initHistory, setPageParams} from "./modules/Page"
+import {initCommonInfoList} from "./modules/CommonInfoList"
 
 VkSdk.init()
 	.then(iFrameParams => L.init(iFrameParams.getLangCode()))
@@ -286,7 +287,27 @@ function initData() {
 		text: '© 2017 PUBG CORPORATION ALL RIGHTS RESERVED \n' +
 		'PLAYERUNKNOWN\'S BATTLEGROUNDS and PUBG are registered trademarks, trademarks or service marks of PUBG',
 	}
-	store.dispatch(initLaw(law))
+	let commonInfoTitle = 'Дополнительная информация'
+	let commonInfoListMock = [
+		{
+			title: 'Инструкция по погашению',
+			list: [
+				{text: 'Создайте учетную запись Sony на сайте [https://playstation.com/|playstation.com]'},
+				{text: 'Авторизируйтесь в PlayStationStore или в онлайн магазине Sony'},
+				{text: 'Выберите пункт «Погашение кодов»'},
+				{text: 'Введите 12 цифр цифрового кода и нажмите «Продолжить»'},
+				{text: 'Далее следуйте инструкциям на экране'},
+			],
+		},
+		{
+			title: 'Бесплатная техническая поддержка',
+			list: [
+				{text: 'Электронная почта [mailto:networksupport@ru.playstation.com|networksupport@ru.playstation.com]'},
+				{text: 'Тел 8-800-200-76-67'},
+			],
+		},
+	]
+	store.dispatch(initCommonInfoList(commonInfoTitle, commonInfoListMock))
 	let communityTitle = 'Сообщества игры'
 	let communityListMock = [
 		{
@@ -309,4 +330,5 @@ function initData() {
 		},
 	]
 	store.dispatch(initCommunityList(communityTitle, communityListMock))
+	store.dispatch(initLaw(law))
 }

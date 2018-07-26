@@ -13,6 +13,7 @@ import GameListMobile from "../../components/GameListMobile/GameListMobile"
 import {PAGE_ADDITION, PAGE_MAIN, PAGE_VIDEO} from "../../modules/Page"
 import PageVideoMobile from "../../components/PageVideoMobile/PageVideoMobile"
 import PageAdditionMobile from "../../components/PageAdditionMobile/PageAdditionMobile"
+import CommonInfoListMobile from "../../components/CommonInfoListMobile/CommonInfoListMobile"
 
 class MobileContainer extends Component {
 
@@ -76,6 +77,7 @@ class MobileContainer extends Component {
 								deviceHeight={MobileContainer.deviceHeight}
 								scrollTop={() => this.scrollTop()}/>
 			<RequirementListMobile/>
+			<CommonInfoListMobile/>
 			<CommunityListMobile deviceWidth={MobileContainer.deviceWidth} deviceHeight={MobileContainer.deviceHeight}/>
 			<LawMobile/>
 		</div>

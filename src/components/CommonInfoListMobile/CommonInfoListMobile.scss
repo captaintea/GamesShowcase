@@ -1,0 +1,43 @@
+.CommonInfoListMobile {
+	margin-top: -2px;
+
+	&__list {
+
+	}
+
+	&__item {
+		border-bottom: 0.5px solid rgba(0,0,0,0.12);
+		margin-bottom: 18px;
+		padding-bottom: 21px;
+
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&__item-title {
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 21px;
+		padding-bottom: 13px;
+	}
+
+	ul {
+		list-style-type: decimal;
+		padding-left: 16px;
+		margin: 0;
+	}
+
+	li {
+		font-size: 15px;
+		line-height: 21px;
+		padding-bottom: 10px;
+		padding-left: 4px;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}

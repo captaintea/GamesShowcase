@@ -6,6 +6,7 @@ import GameInfoList from "./GameInfoList"
 import VideoList from "./VideoList"
 import AdditionList from "./AdditionList"
 import RequirementList from "./RequirementList"
+import CommonInfoList from "./CommonInfoList"
 import CommunityList from "./CommunityList"
 import LawModule from "./LawModule"
 
@@ -17,6 +18,7 @@ export default combineReducers({
 	VideoList,
 	AdditionList,
 	RequirementList,
+	CommonInfoList,
 	CommunityList,
 	LawModule,
 })

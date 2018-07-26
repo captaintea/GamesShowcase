@@ -35,7 +35,7 @@ function parseLink(text,pref,cfg = {}) {
     parts.forEach( (t,i) => {
         if (t.indexOf('[') === 0 && !cfg['noLink']) {
             let tag = t.split('|')
-            let href = 'https://vk.com/' + tag[0].replace('[', '')
+            let href = tag[0].replace('[', '')
             let text = tag[1].replace(']', '')
             res.push(<a href={href} target="_blank" key={pref + '_' + i}>{text}</a>)
         } else if (t.indexOf('<') === 0 && !cfg['noStrong']) {
