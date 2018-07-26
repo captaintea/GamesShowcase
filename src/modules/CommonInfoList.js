@@ -21,12 +21,15 @@ export class CommonInfoItem {
 
 	_title = null
 	_list = null
+	_isBulleted = false
 
 	static fromRaw(raw) {
 		let item = new CommonInfoItem()
 
 		item._title = raw.title
 		item._list = raw.list.map(rawItem => CommonInfoListItem.fromRaw(rawItem))
+		item._isBulleted = !!raw.is_bulleted
+
 		return item
 	}
 
@@ -36,6 +39,10 @@ export class CommonInfoItem {
 
 	get list() {
 		return this._list
+	}
+
+	get isBulleted() {
+		return this._isBulleted
 	}
 }
 

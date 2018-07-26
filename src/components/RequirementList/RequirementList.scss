@@ -12,7 +12,8 @@
 
 	&__item {
 		padding-bottom: 16px;
-		width: 326px;
+		width: 100%;
+		overflow: hidden;
 
 		&:nth-child(odd) {
 			padding-right: 25px;

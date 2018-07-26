@@ -301,6 +301,7 @@ function initData() {
 		},
 		{
 			title: 'Бесплатная техническая поддержка',
+			is_bulleted: true,
 			list: [
 				{text: 'Электронная почта [mailto:networksupport@ru.playstation.com|networksupport@ru.playstation.com]'},
 				{text: 'Тел 8-800-200-76-67'},

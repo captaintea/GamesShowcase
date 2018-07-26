@@ -7,6 +7,7 @@ import TabList from "../TabList/TabList"
 
 const MAX_RETRACTED_HEIGHT = 150
 const PADDING_HEIGHT = 20
+const BLOCK_WIDTH = 326
 
 class RequirementList extends Component {
 
@@ -51,6 +52,9 @@ class RequirementList extends Component {
 				 style={listStyle}
 				 ref={extendable => this.extendable = extendable}>
 				{tabList.length && tabList[selectedTabKey] ? tabList[selectedTabKey].blockList.map((block, blockKey) => {
+					if (tabList[selectedTabKey].blockList.length !== 1) {
+						itemStyle.width = BLOCK_WIDTH
+					}
 					return <div className="RequirementList__item" key={blockKey} style={itemStyle}>
 						<div className="RequirementList__item-title">
 							{block.title}

@@ -11,11 +11,15 @@ class CommonInfoListMobile extends Component {
 			<PanelMobile title={title}>
 				<div className="CommonInfoListMobile__list">
 					{list.map((infoItem, infoItemKey) => {
+						let ulStyle = {}
+						if (infoItem.isBulleted) {
+							ulStyle.listStyleType = 'initial'
+						}
 						return <div className="CommonInfoListMobile__item" key={infoItemKey}>
 							<div className="CommonInfoListMobile__item-title">
 								{infoItem.title}
 							</div>
-							<ul>
+							<ul style={ulStyle}>
 								{infoItem.list.map((item, key) => {
 									return <li key={key}>
 										{item.text}
