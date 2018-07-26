@@ -13,10 +13,6 @@
 	&__item {
 		padding-bottom: 16px;
 		width: 326px;
-
-		&:last-child {
-			padding-bottom: 20px;
-		}
 	}
 
 	&__title {
@@ -28,11 +24,14 @@
 	&__item-title {
 		color: #222222;
 		font-weight: 500;
-		line-height: 21px;
+		line-height: 20px;
+		padding-top: 19px;
+		padding-bottom: 8px;
 	}
 
 	&__item-description {
-		line-height: 20px;
+		line-height: 18px;
+		padding-bottom: 7px;
 	}
 
 	&__extend {
@@ -48,5 +47,10 @@
 		&:hover {
 			background-color: #f0f2f5;
 		}
+	}
+
+	&__feature {
+		color: #828282;
+		line-height: 18px;
 	}
 }

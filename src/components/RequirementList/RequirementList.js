@@ -2,9 +2,10 @@ import React, {Component} from "react"
 import {connect} from "react-redux"
 import "./RequirementList.css"
 import L from "../../lang/L"
-import {setExtended} from "../../modules/RequirementList"
+import {setExtended, setSelectedTabKey} from "../../modules/RequirementList"
+import TabList from "../TabList/TabList"
 
-const MAX_RETRACTED_HEIGHT = 85
+const MAX_RETRACTED_HEIGHT = 172
 const PADDING_HEIGHT = 20
 
 class RequirementList extends Component {
@@ -30,27 +31,43 @@ class RequirementList extends Component {
 		}
 	}
 
+	onTabSelect(key) {
+		this.props.setExtended(true)
+		this.props.setSelectedTabKey(key)
+	}
+
 	render() {
-		let {title, list, extended} = this.props
+		let {title, extended, selectedTabKey, tabList} = this.props
 		let listStyle = !extended ? {maxHeight: MAX_RETRACTED_HEIGHT} : {}
 		let itemStyle = !extended ? {paddingBottom: 0} : {}
 		return <div className="RequirementList">
 			<div className="RequirementList__title">
 				{title}
 			</div>
+			<TabList selectedKey={selectedTabKey}
+					 tabList={tabList.map(tab => tab.platform)}
+					 onSelect={(key) => this.onTabSelect(key)}/>
 			<div className="RequirementList__list"
 				 style={listStyle}
 				 ref={extendable => this.extendable = extendable}>
-				{list.map((item, key) => {
-					return <div className="RequirementList__item" key={key} style={itemStyle}>
+				{tabList.length && tabList[selectedTabKey] ? tabList[selectedTabKey].blockList.map((block, blockKey) => {
+					return <div className="RequirementList__item" key={blockKey} style={itemStyle}>
 						<div className="RequirementList__item-title">
-							{item.title}
+							{block.title}
 						</div>
-						<div className="RequirementList__item-description">
-							{item.description}
-						</div>
+						{block.list && block.list.length ? block.list.map((item, key) => {
+							return <div className="RequirementList__item-description"
+										key={key}>
+								<div className="RequirementList__feature">
+									{item.feature}
+								</div>
+								<div>
+									{item.requirement}
+								</div>
+							</div>
+						}) : null}
 					</div>
-				})}
+				}) : null}
 			</div>
 			{!extended ?
 				<div className="RequirementList__extend"
@@ -65,9 +82,10 @@ class RequirementList extends Component {
 function map(state) {
 	return {
 		title: state.RequirementList.title,
-		list: state.RequirementList.list,
+		tabList: state.RequirementList.tabList,
 		extended: state.RequirementList.extended,
+		selectedTabKey: state.RequirementList.selectedTabKey,
 	}
 }
 
-export default connect(map, {setExtended})(RequirementList)
+export default connect(map, {setExtended, setSelectedTabKey})(RequirementList)

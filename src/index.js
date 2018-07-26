@@ -210,7 +210,7 @@ function initData() {
 			]
 		},
 		{
-			platform: 'MAX',
+			platform: 'MAC',
 			block_list: [
 				{
 					title: 'Минимальные',

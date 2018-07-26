@@ -1,0 +1,25 @@
+.TabList {
+	padding: 0 19px 0;
+	border-bottom: 1px solid #E7E8EC;
+
+	&__list {
+		display: flex;
+		margin-bottom: -1px;
+	}
+
+	&__item {
+		color: #656565;
+		padding: 0 7px 13px;
+		margin-right: 10px;
+		cursor: pointer;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&--selected {
+			color: #000000;
+			border-bottom: 2px solid #6387AC;
+		}
+	}
+}
