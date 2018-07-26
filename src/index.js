@@ -139,20 +139,146 @@ function initData() {
 	let requirementListTitle = 'Системные требования'
 	let requirementListMock = [
 		{
-			title: 'Минимальные:',
-			description: 'ОС: 64-bit Windows 7, Windows 8.1, Windows 10\n' +
-			'Процессор: Intel Core i5-4430 / AMD FX-6300\n' +
-			'Оперативная память: 8 GB ОЗУ'
+			platform: 'Windows',
+			block_list: [
+				{
+					title: 'Минимальные',
+					list: [
+						{
+							feature: 'ОС',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Процессор',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Оперативная память',
+							requirement: '8 GB ОЗУ',
+						},
+						{
+							feature: 'Видеокарта',
+							requirement: 'NVIDIA GeForce GTX 960 2GB /AMD Radeon R7 370 2GB',
+						},
+						{
+							feature: 'DirectX',
+							requirement: 'Версии 11',
+						},
+						{
+							feature: 'Сеть',
+							requirement: 'Широкополосное подключение к интернету',
+						},
+						{
+							feature: 'Место на диске',
+							requirement: '30 GB',
+						},
+					],
+				},
+				{
+					title: 'Рекомендованные',
+					list: [
+						{
+							feature: 'ОС',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Процессор',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Оперативная память',
+							requirement: '8 GB ОЗУ',
+						},
+						{
+							feature: 'Видеокарта',
+							requirement: 'NVIDIA GeForce GTX 960 2GB /AMD Radeon R7 370 2GB',
+						},
+						{
+							feature: 'DirectX',
+							requirement: 'Версии 11',
+						},
+						{
+							feature: 'Сеть',
+							requirement: 'Широкополосное подключение к интернету',
+						},
+						{
+							feature: 'Место на диске',
+							requirement: '30 GB',
+						},
+					],
+				},
+			]
 		},
 		{
-			title: 'Рекомендованные:',
-			description: 'ОС: 64-bit Windows 7, Windows 8.1, Windows 10\n' +
-			'Процессор: Intel Core i5-6600K / AMD Ryzen 5 1600',
-		},
-		{
-			title: 'Средние:',
-			description: 'ОС: 64-bit Windows 7, Windows 8.1, Windows 10\n' +
-			'Процессор: Intel Core i5-6600K / AMD Ryzen 5 1600',
+			platform: 'MAX',
+			block_list: [
+				{
+					title: 'Минимальные',
+					list: [
+						{
+							feature: 'ОС',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Процессор',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Оперативная память',
+							requirement: '8 GB ОЗУ',
+						},
+						{
+							feature: 'Видеокарта',
+							requirement: 'NVIDIA GeForce GTX 960 2GB /AMD Radeon R7 370 2GB',
+						},
+						{
+							feature: 'DirectX',
+							requirement: 'Версии 11',
+						},
+						{
+							feature: 'Сеть',
+							requirement: 'Широкополосное подключение к интернету',
+						},
+						{
+							feature: 'Место на диске',
+							requirement: '30 GB',
+						},
+					],
+				},
+				{
+					title: 'Стандартные',
+					list: [
+						{
+							feature: 'ОС',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Процессор',
+							requirement: '64-bit Windows 7, Windows 8.1, Windows 10',
+						},
+						{
+							feature: 'Оперативная память',
+							requirement: '8 GB ОЗУ',
+						},
+						{
+							feature: 'Видеокарта',
+							requirement: 'NVIDIA GeForce GTX 960 2GB /AMD Radeon R7 370 2GB',
+						},
+						{
+							feature: 'DirectX',
+							requirement: 'Версии 11',
+						},
+						{
+							feature: 'Сеть',
+							requirement: 'Широкополосное подключение к интернету',
+						},
+						{
+							feature: 'Место на диске',
+							requirement: '30 GB',
+						},
+					],
+				},
+			]
 		},
 	]
 	store.dispatch(initRequirementList(requirementListTitle, requirementListMock))

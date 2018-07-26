@@ -16,16 +16,26 @@
 		font-weight: 500;
 		font-size: 15px;
 		line-height: 21px;
+		padding-bottom: 8px;
 	}
 
 	&__description {
 		font-size: 15px;
-		line-height: 21px;
+		line-height: 19px;
+		padding-bottom: 8px;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
 	}
 
 	&__extend {
 		font-size: 15px;
 		color: #45678F;
 		font-weight: 500;
+	}
+
+	&__feature {
+		color: #71757A !important;
 	}
 }

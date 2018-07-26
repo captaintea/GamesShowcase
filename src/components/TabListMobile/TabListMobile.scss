@@ -1,0 +1,26 @@
+.TabListMobile {
+	padding: 8px 0;
+
+	&__list {
+
+	}
+
+	&__item {
+		border-radius: 8px;
+		font-size: 14px;
+		color: #71757A;
+		font-weight: 500;
+		display: inline-block;
+		margin-right: 8px;
+		padding: 6px 12px 7px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&--selected {
+			color: #5A5D61;
+			background: #EBEDF0;
+		}
+	}
+}
