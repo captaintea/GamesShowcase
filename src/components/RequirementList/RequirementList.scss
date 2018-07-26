@@ -5,7 +5,7 @@
 
 	&__list {
 		overflow: hidden;
-		padding: 0 25px;
+		padding: 19px 25px 0;
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -13,6 +13,10 @@
 	&__item {
 		padding-bottom: 16px;
 		width: 326px;
+
+		&:nth-child(odd) {
+			padding-right: 25px;
+		}
 	}
 
 	&__title {
@@ -25,7 +29,6 @@
 		color: #222222;
 		font-weight: 500;
 		line-height: 20px;
-		padding-top: 19px;
 		padding-bottom: 8px;
 	}
 

@@ -5,7 +5,7 @@ import L from "../../lang/L"
 import {setExtended, setSelectedTabKey} from "../../modules/RequirementList"
 import TabList from "../TabList/TabList"
 
-const MAX_RETRACTED_HEIGHT = 172
+const MAX_RETRACTED_HEIGHT = 150
 const PADDING_HEIGHT = 20
 
 class RequirementList extends Component {
