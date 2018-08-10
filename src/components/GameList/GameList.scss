@@ -19,6 +19,7 @@
 		padding-bottom: 20px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 
 		&:last-child {
 			padding-bottom: 0;
@@ -94,7 +95,8 @@
 	}
 
 	&__item-bottom {
-		display: table;
+		display: flex;
+		align-items: center;
 		height: 30px;
 		white-space: nowrap;
 	}

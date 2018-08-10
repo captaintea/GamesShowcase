@@ -5,6 +5,7 @@ import Panel from "../Panel/Panel"
 import {nToBr} from "../../tools/helpers"
 import {setDescriptionExtended} from "../../modules/GameList"
 import L from "../../lang/L"
+import Cashback from "../Cashback/Cashback"
 
 const MAX_RETRACTED_HEIGHT = 57
 const ONE_ROW_HEIGHT = 19
@@ -76,6 +77,7 @@ class GameList extends Component {
 							</div>
 							<div className="GameList__item-right">
 								<div className="GameList__item-bottom">
+									{game.cashback ? <Cashback cashback={game.getCashbackView()}/> : null}
 									{game.discount ?
 										<div className="GameList__item-price GameList__item-price--old">
 											{game.price}

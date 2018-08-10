@@ -56,15 +56,20 @@ class GameSingleMobile extends Component {
 							<div className="GameSingleMobile__item-description">
 								{game.description}
 							</div>
-							<div className={"GameSingleMobile__item-price" +
-									(game.discount ? ' GameSingleMobile__item-price--discounted' : '')}>
-								{game.discount ? game.getDiscountedPrice() : game.price}
-							</div>
-							{game.discount ?
-								<div className="GameSingleMobile__item-price GameSingleMobile__item-price--old">
-									{game.price}
+							<div className="GameSingleMobile__item-bottom">
+								<div className={"GameSingleMobile__item-price" +
+								(game.discount ? ' GameSingleMobile__item-price--discounted' : '')}>
+									{game.discount ? game.getDiscountedPrice() : game.price}
 								</div>
-							: null}
+								{game.discount ?
+									<div className="GameSingleMobile__item-price GameSingleMobile__item-price--old">
+										{game.price}
+									</div>
+									: null}
+								{game.cashback ? <div className="GameSingleMobile__cashback">
+									{game.getCashbackView()}{' '}{L.t('cashback')}
+								</div> : null}
+							</div>
 						</td>
 					</tr>
 				</tbody>

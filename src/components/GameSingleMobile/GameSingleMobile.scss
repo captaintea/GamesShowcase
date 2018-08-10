@@ -5,6 +5,7 @@
 	box-sizing: border-box;
 
 	&__item-image-wrapper {
+		vertical-align: top;
 		position: relative;
 		font-size: 0;
 	}
@@ -95,5 +96,25 @@
 		font-size: 15px;
 		color: #45678F;
 		font-weight: 500;
+	}
+
+	&__cashback {
+		display: inline-block;
+		font-size: 13.5px;
+		color: #71757A;
+		float: right;
+		line-height: 21px;
+		margin-top: 3px;
+		
+		@media (max-width: 320px) {
+			padding-top: 3px;
+			display: block;
+			float: none;
+		}
+	}
+
+	&__item-bottom {
+		width: 100%;
+		overflow: hidden;
 	}
 }

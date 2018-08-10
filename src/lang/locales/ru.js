@@ -8,6 +8,8 @@ export default function ru() {
 			extend_no_dots: 'Показать полностью',
 			show_all: 'Показать всё',
 			share: 'Поделиться',
+			cashback: 'кешбэк',
+			buy_cashback: 'Кешбэк при покупке',
         }
     }
 }

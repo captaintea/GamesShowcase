@@ -4,6 +4,7 @@ import "./GameSingle.css"
 import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
 import {nToBr} from "../../tools/helpers"
+import Cashback from "../Cashback/Cashback"
 
 const MAX_RETRACTED_HEIGHT = 57
 
@@ -83,6 +84,7 @@ class GameSingle extends Component {
 											{game.price}
 										</div>
 									: null}
+									{game.cashback ? <Cashback dotBefore={true} cashback={game.getCashbackView()}/> : null}
 								</div>
 							</div>
 						</td>

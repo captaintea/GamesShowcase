@@ -116,6 +116,9 @@ class GameListMobile extends Component {
 												</button>
 											</div>
 										</div>
+										{game.cashback ? <div className="GameListMobile__cashback">
+											{game.getCashbackView()}{' '}{L.t('cashback')}
+										</div> : null}
 									</td>
 								</tr>
 								</tbody>

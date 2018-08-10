@@ -10,6 +10,7 @@ export class GameItem {
 	_imageUrl = null
 	_buttonText = null
 	_buttonTextMobile = null
+	_cashback = null
 
 
 	static fromRaw(raw) {
@@ -22,6 +23,7 @@ export class GameItem {
 		item._imageUrl = raw.image_url
 		item._buttonText = raw.button_text
 		item._buttonTextMobile = raw.button_text_mobile
+		item._cashback = raw.cashback
 		return item
 	}
 
@@ -63,6 +65,14 @@ export class GameItem {
 
 	getInitialDescription() {
 		return this._description
+	}
+
+	getCashbackView() {
+		return getMoneyFormat(this._cashback, '0 ₽')
+	}
+
+	get cashback() {
+		return this._cashback
 	}
 }
 
