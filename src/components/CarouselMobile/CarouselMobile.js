@@ -12,15 +12,16 @@ class CarouselMobile extends Component {
 
 	componentDidMount(){
 		if (this.carousel) {
-
+			this.carousel.addEventListener('touchstart', this.touchStart)
+			this.carousel.addEventListener('touchmove', this.preventTouch, {passive: false})
 		}
-		this.carousel.addEventListener('touchstart', this.touchStart)
-		this.carousel.addEventListener('touchmove', this.preventTouch, {passive: false})
 	}
 
 	componentWillUnmount(){
-		this.carousel.removeEventListener('touchstart', this.touchStart)
-		this.carousel.removeEventListener('touchmove', this.preventTouch, {passive: false})
+		if (this.carousel) {
+			this.carousel.removeEventListener('touchstart', this.touchStart)
+			this.carousel.removeEventListener('touchmove', this.preventTouch, {passive: false})
+		}
 	}
 
 	touchStart(e){
