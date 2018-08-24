@@ -8,6 +8,39 @@ import "slick-carousel/slick/slick-theme.css"
 
 class CarouselMobile extends Component {
 
+	carousel = null
+
+	componentDidMount(){
+		if (this.carousel) {
+
+		}
+		this.carousel.addEventListener('touchstart', this.touchStart)
+		this.carousel.addEventListener('touchmove', this.preventTouch, {passive: false})
+	}
+
+	componentWillUnmount(){
+		this.carousel.removeEventListener('touchstart', this.touchStart)
+		this.carousel.removeEventListener('touchmove', this.preventTouch, {passive: false})
+	}
+
+	touchStart(e){
+		this.firstClientX = e.touches[0].clientX
+		this.firstClientY = e.touches[0].clientY
+	}
+
+	preventTouch(e){
+		const minValue = 5 // threshold
+
+		this.clientX = e.touches[0].clientX - this.firstClientX
+		this.clientY = e.touches[0].clientY - this.firstClientY
+
+		if(Math.abs(this.clientX) > minValue){
+			e.preventDefault()
+			e.returnValue = false
+			return false
+		}
+	}
+
 	render() {
 		let {list} = this.props
 		let settings = {
@@ -26,7 +59,7 @@ class CarouselMobile extends Component {
 			slidesToScroll: 1,
 			dotsClass: "CarouselMobile__dot-list",
 		};
-		return <div className="CarouselMobile" style={{maxWidth: this.props.deviceWidth}} onTouchMove={e => e.preventDefault()}>
+		return <div ref={(el) => {this.carousel = el}} className="CarouselMobile" style={{maxWidth: this.props.deviceWidth}} onTouchMove={e => e.preventDefault()}>
 			<Slider {...settings}>
 				{list.map((cover, key) => {
 					let style = {
