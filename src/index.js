@@ -59,7 +59,7 @@ function initData() {
 			button_text_mobile: 'Купить',
 			cashback: 149,
 		},
-		{
+		/*{
 			name: 'ONE ROW TITLE',
 			price: 1999,
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
@@ -76,7 +76,7 @@ function initData() {
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
 			button_text: 'Купить игру',
 			button_text_mobile: 'Купить',
-		},
+		},*/
 	]
 	let gameTitle = 'Far Cry 5'
 	let shareText = 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS - отличная игра'
