@@ -74,6 +74,10 @@
 		}
 	}
 
+	&__item-price--old + &__cashback {
+		margin-top: 3px;
+	}
+
 	table {
 		margin-bottom: 15px;
 	}
@@ -105,12 +109,12 @@
 		color: #71757A;
 		float: right;
 		line-height: 21px;
-		margin-top: 3px;
-		
+
 		@media (max-width: 320px) {
 			padding-top: 3px;
 			display: block;
 			float: none;
+			margin-top: 0 !important;
 		}
 	}
 
