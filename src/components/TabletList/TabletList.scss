@@ -1,0 +1,10 @@
+.TabletList {
+	padding: 25px 19px 6px 19px;
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		margin: 0 6px 22px 6px;
+		display: inline-block;
+	}
+}

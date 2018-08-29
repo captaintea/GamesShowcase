@@ -2,38 +2,23 @@ import React, {Component} from "react"
 import {connect} from "react-redux"
 import "./PageAddition.css"
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs"
+import ProductItem from "../ProductItem/ProductItem"
+import TabletList from "../TabletList/TabletList"
+
+const ITEM_WIDTH = 160
 
 class PageAddition extends Component {
+
+	renderItem(item) {
+		return <ProductItem product={item} width={ITEM_WIDTH}/>
+	}
 
 	render() {
 		let {list} = this.props
 		return <div className="PageAddition">
 			<Breadcrumbs/>
 			<div className="PageAddition__list">
-				{list.map((additionItem, key) => {
-					let imageStyle = {
-						background: `url(${additionItem.imageUrl}) no-repeat center center`,
-						backgroundSize: 'cover',
-					}
-					return <div className="PageAddition__item" key={key}>
-						<div className="PageAddition__image-wrapper">
-							<a target="_blank" href={additionItem.url}>
-								<div className="PageAddition__item-image" style={imageStyle}>
-								</div>
-							</a>
-						</div>
-						<div className="PageAddition__item-title-wrapper">
-							<a target="_blank" href={additionItem.url}>
-								<div className="PageAddition__item-title">
-									{additionItem.title}
-								</div>
-							</a>
-						</div>
-						<div className="PageAddition__item-price">
-							{additionItem.price}
-						</div>
-					</div>
-				})}
+				<TabletList list={list} renderItem={(item) => this.renderItem(item)}/>
 			</div>
 		</div>
 	}

@@ -128,16 +128,62 @@ function initData() {
 	]
 	store.dispatch(initVideoList(videoListTitle, videoListMock))
 	let additionListTitle = 'Дополнения'
+	//platforms: pc: 'ПК', ps3: 'PS3', ps4: 'PS4', xbox: 'XBOX'
+	//instead_of_price: payment_code, fill_code
+	//need to add platform/instead_of_price key to lang file (ex. lang/locales/ru) to add new platform/instead_of_price
 	let additionListMock = [
-		{image_url: 'https://loremflickr.com/272/272', title: 'Speed & Momentum Crate', price: 635, url: 'https://vk.com/id0'},
-		{image_url: 'https://unsplash.it/272?random', title: 'Ghosted Crate', price: 635, url: 'https://vk.com/id0'},
-		{image_url: 'https://picsum.photos/272?random', title: 'Bengal Tiger', price: 319, url: 'https://vk.com/id0'},
-		{image_url: 'https://loremflickr.com/272/272', title: 'Speed & Momentum Crate', price: 635, url: 'https://vk.com/id0'},
-		{image_url: 'https://unsplash.it/272?random', title: 'Ghosted Crate', price: 635, url: 'https://vk.com/id0'},
-		{image_url: 'https://picsum.photos/272?random', title: 'Bengal Tiger', price: 319, url: 'https://vk.com/id0'},
-		{image_url: 'https://loremflickr.com/272/272', title: 'Speed & Momentum Crate', price: 635, url: 'https://vk.com/id0'},
-		{image_url: 'https://unsplash.it/272?random', title: 'Ghosted Crate', price: 635, url: 'https://vk.com/id0'},
-		{image_url: 'https://picsum.photos/272?random', title: 'Bengal Tiger', price: 319, url: 'https://vk.com/id0'},
+		{
+			image_url: 'https://loremflickr.com/272/272',
+			name: 'Speed & Momentum Crate',
+			url: 'https://vk.com/id0',
+			show_price: false,
+			platform: 'ps4',
+			instead_of_price: 'fill_code',
+		},
+		{
+			image_url: 'https://unsplash.it/272?random',
+			name: 'Ghosted Crate',
+			url: 'https://vk.com/id0',
+			show_price: false,
+			platform: 'ps4',
+			instead_of_price: 'payment_code',
+		},
+		{
+			image_url: 'https://picsum.photos/272?random',
+			name: 'Bengal Tiger',
+			price: 319,
+			url: 'https://vk.com/id0',
+			show_price: true,
+			discount: 30,
+			cashback: 34,
+			platform: 'PS3',
+		},
+		{
+			image_url: 'https://loremflickr.com/272/272',
+			name: 'Speed & Momentum Crate',
+			price: 564,
+			url: 'https://vk.com/id0',
+			show_price: true,
+			platform: 'xbox',
+		},
+		{
+			image_url: 'https://unsplash.it/272?random',
+			name: 'Ghosted Crate',
+			price: 556,
+			url: 'https://vk.com/id0',
+			show_price: true,
+			cashback: 54,
+			platform: 'pc',
+		},
+		{
+			image_url: 'https://picsum.photos/272?random',
+			name: 'Bengal Tiger',
+			price: 319,
+			url: 'https://vk.com/id0',
+			show_price: true,
+			discount: 30,
+			platform: 'ps4',
+		},
 	]
 	store.dispatch(initAdditionList(additionListTitle, additionListMock))
 	let requirementListTitle = 'Системные требования'

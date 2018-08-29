@@ -10,6 +10,13 @@ export default function ru() {
 			share: 'Поделиться',
 			cashback: 'кешбэк',
 			buy_cashback: 'Кешбэк при покупке',
+			cashback_value: '{{cashback}} кешбек',
+			pc: 'ПК',
+			ps3: 'PS3',
+			ps4: 'PS4',
+			xbox: 'XBOX',
+			payment_code: 'Код оплаты',
+			fill_code: 'Код пополнения',
         }
     }
 }

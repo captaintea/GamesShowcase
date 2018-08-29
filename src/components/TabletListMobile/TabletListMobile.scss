@@ -1,0 +1,14 @@
+.TabletListMobile {
+	padding: 8px 10.5px;
+
+	table {
+		width: 100%;
+	}
+
+	&__item {
+		padding: 8px 5.5px;
+		box-sizing: border-box;
+		vertical-align: top;
+		width: 50%;
+	}
+}

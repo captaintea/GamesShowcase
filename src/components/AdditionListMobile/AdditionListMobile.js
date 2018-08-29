@@ -3,6 +3,9 @@ import {connect} from "react-redux"
 import "./AdditionListMobile.css"
 import SliderMobile from "../SliderMobile/SliderMobile"
 import {PAGE_ADDITION, pushPage} from "../../modules/Page"
+import ProductItemMobile from "../ProductItemMobile/ProductItemMobile"
+
+const ITEM_WIDTH = 145
 
 class AdditionListMobile extends Component {
 
@@ -13,29 +16,8 @@ class AdditionListMobile extends Component {
 		this.props.pushPage(PAGE_ADDITION)
 	}
 
-	renderItem(additionItem) {
-		let imageStyle = {
-			background: `url(${additionItem.imageUrl}) no-repeat center center`,
-			backgroundSize: 'cover',
-		}
-		return <div className="AdditionListMobile__item">
-			<div className="AdditionListMobile__image-wrapper">
-				<a target="_blank" href={additionItem.url}>
-					<div className="AdditionListMobile__item-image" style={imageStyle}>
-					</div>
-				</a>
-			</div>
-			<div className="AdditionListMobile__item-title-wrapper">
-				<a target="_blank" href={additionItem.url}>
-					<div className="AdditionListMobile__item-title">
-						{additionItem.title}
-					</div>
-				</a>
-			</div>
-			<div className="AdditionListMobile__item-price">
-				{additionItem.price}
-			</div>
-		</div>
+	renderItem(item) {
+		return <ProductItemMobile product={item} width={ITEM_WIDTH}/>
 	}
 
 	render() {

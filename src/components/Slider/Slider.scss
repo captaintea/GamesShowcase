@@ -1,0 +1,94 @@
+.Slider {
+
+	.Panel {
+		padding-left: 0;
+
+		&__header {
+			padding-left: 25px;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+	}
+	
+	&__list {
+		transition: 0.4s ease-in-out;
+		white-space: nowrap;
+	}
+
+	&__item {
+		position:relative;
+		display: inline-block;
+		vertical-align: top;
+		transition: opacity 0.4s ease-in-out;
+
+		&:first-child {
+			margin-left: 25px;
+		}
+
+		&:last-child {
+			margin-right: 16px;
+		}
+
+		&--arrowed {
+			opacity: 0.5;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 58px;
+		width: 25px;
+		height: 29px;
+
+		&--left {
+			left: 11px;
+			background: url("./img/arrow_left.png") no-repeat center right;
+			background-size: cover;
+
+			@media(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+				background: url("./img/arrow_left_2x.png") no-repeat center center;
+				background-size: cover;
+			}
+		}
+
+		&--right {
+			right: 11px;
+			background: url("./img/arrow_right.png") no-repeat center left;
+			background-size: cover;
+
+			@media(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+				background: url("./img/arrow_right_2x.png") no-repeat center center;
+				background-size: cover;
+
+			}
+		}
+	}
+
+	&__shadow-wrapper {
+		position: relative;
+		height: 100%;
+	}
+
+	&__shadow {
+		position:absolute;
+		top: 0;
+		width: 51px;
+		cursor: pointer;
+		height: 100%;
+		z-index: 2;
+
+		&--max {
+			width: 81px;
+		}
+
+		&--left {
+			left: 0;
+		}
+
+		&--right {
+			right: 0;
+		}
+	}
+}
