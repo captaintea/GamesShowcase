@@ -7,7 +7,9 @@ export default class SliderMobile extends Component {
 	render() {
 		let {list, title} = this.props
 		return <div className="SliderMobile" style={{maxWidth: this.props.deviceWidth}}>
-			<PanelMobile title={title} noRightPadding={true}
+			<PanelMobile title={title}
+						 slider={true}
+						 noRightPadding={true}
 						 noPaddingBottom={true}
 						 showAll={() => this.props.showAll()}>
 				<div className="SliderMobile__list">

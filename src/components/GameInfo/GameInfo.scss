@@ -5,11 +5,13 @@
 	box-shadow: 0 1px 0 0 #D7D8DB;
 
 	&__list {
-
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&__item {
 		padding-bottom: 6px;
+		width: 50%;
 		display: flex;
 
 		&:last-child {

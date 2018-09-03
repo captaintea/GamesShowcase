@@ -17,6 +17,8 @@ export default function ru() {
 			xbox: 'XBOX',
 			payment_code: 'Код оплаты',
 			fill_code: 'Код пополнения',
+			not_found: 'Ошибка 404: товар не найден',
+			to_catalog: 'Перейти в каталог',
         }
     }
 }

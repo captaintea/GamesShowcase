@@ -12,6 +12,14 @@
 		display: table;
 	}
 
+	&--slider {
+		padding-left: 0;
+	}
+
+	&--slider &__title {
+		padding-left: 22px;
+	}
+
 	&__title-item {
 		display: table-cell;
 		width: 100%;

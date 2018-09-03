@@ -1,0 +1,30 @@
+.NotFound {
+	background: #FFFFFF;
+
+	&__wrapper {
+		padding-top: 172px;
+		padding-bottom: 184px;
+	}
+
+	&__warning {
+		width: 60px;
+		height: 60px;
+		background: url("./img/warning.svg") no-repeat center center/auto;
+		margin: 0 auto;
+	}
+
+	&__title {
+		color: #222222;
+		letter-spacing: 0;
+		text-align: center;
+		font-weight: 600;
+		font-size: 18px;
+		padding-top: 16px;
+		padding-bottom: 13px;
+		white-space: nowrap;
+	}
+
+	&__controls {
+		text-align: center;
+	}
+}

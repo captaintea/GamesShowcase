@@ -5,8 +5,9 @@ import L from "../../lang/L"
 export default class PanelMobile extends Component {
 
 	render() {
-		let {title, noMargin, noRightPadding, noPaddingBottom, showAll} = this.props
+		let {title, noMargin, noRightPadding, noPaddingBottom, showAll, slider} = this.props
 		let style = {}
+		let classList = ["PanelMobile"]
 		if (noMargin) {
 			style = {marginBottom: 0}
 		}
@@ -16,7 +17,10 @@ export default class PanelMobile extends Component {
 		if (noPaddingBottom) {
 			style.paddingBottom = 0
 		}
-		return <div className="PanelMobile" style={style}>
+		if (slider) {
+			classList.push("PanelMobile--slider")
+		}
+		return <div className={classList.join(' ')} style={style}>
 			<div className="PanelMobile__title">
 				<div className="PanelMobile__title-item">
 					{title}
