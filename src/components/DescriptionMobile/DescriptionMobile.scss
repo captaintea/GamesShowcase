@@ -1,0 +1,54 @@
+.DescriptionMobile {
+
+	h2 {
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 21px;
+		margin: 0 0 8px;
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	p {
+		font-size: 15px;
+		line-height: 21px;
+		margin: 0 0 20px;
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	ul {
+		list-style-type: decimal;
+		padding-left: 16px;
+		margin: 0 0 20px;
+
+		&:last-child {
+			margin: 0;
+		}
+
+		&.bulleted {
+			list-style-type: initial;
+		}
+	}
+
+	li {
+		font-size: 15px;
+		line-height: 21px;
+		padding-bottom: 10px;
+		padding-left: 4px;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&__extend {
+		font-size: 15px;
+		color: #45678F;
+		font-weight: 500;
+	}
+}

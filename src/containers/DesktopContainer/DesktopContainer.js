@@ -15,6 +15,7 @@ import CommunityList from "../../components/CommunityList/CommunityList"
 import Law from "../../components/Law/Law"
 import GameList from "../../components/GameList/GameList"
 import CommonInfoList from "../../components/CommonInfoList/CommonInfoList"
+import Description from "../../components/Description/Description"
 
 class DesktopContainer extends Component {
 
@@ -99,6 +100,7 @@ class DesktopContainer extends Component {
 			<GameInfo/>
 			<VideoList/>
 			<AdditionList/>
+			<Description/>
 			<RequirementList/>
 			<CommonInfoList/>
 			<CommunityList/>

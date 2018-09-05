@@ -14,6 +14,7 @@ import {PAGE_ADDITION, PAGE_MAIN, PAGE_VIDEO} from "../../modules/Page"
 import PageVideoMobile from "../../components/PageVideoMobile/PageVideoMobile"
 import PageAdditionMobile from "../../components/PageAdditionMobile/PageAdditionMobile"
 import CommonInfoListMobile from "../../components/CommonInfoListMobile/CommonInfoListMobile"
+import DescriptionMobile from "../../components/DescriptionMobile/DescriptionMobile"
 
 class MobileContainer extends Component {
 
@@ -76,6 +77,7 @@ class MobileContainer extends Component {
 			<AdditionListMobile deviceWidth={MobileContainer.deviceWidth}
 								deviceHeight={MobileContainer.deviceHeight}
 								scrollTop={() => this.scrollTop()}/>
+			<DescriptionMobile/>
 			<RequirementListMobile/>
 			<CommonInfoListMobile/>
 			<CommunityListMobile deviceWidth={MobileContainer.deviceWidth} deviceHeight={MobileContainer.deviceHeight}/>

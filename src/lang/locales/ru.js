@@ -5,6 +5,7 @@ export default function ru() {
             all_gone_do_anything: 'Все сломалось, попробуйте ещё раз',
 			to_games_catalog: 'Перейти к каталогу игр',
 			extend: 'Показать полностью...',
+			hide: 'Скрыть подробности',
 			extend_no_dots: 'Показать полностью',
 			show_all: 'Показать всё',
 			share: 'Поделиться',
