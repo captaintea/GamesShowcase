@@ -1,27 +1,18 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
 import "./GameSingle.css"
-import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
 import {nToBr} from "../../tools/helpers"
 import Cashback from "../Cashback/Cashback"
-
-const MAX_RETRACTED_HEIGHT = 57
+import Dotdotdot from 'react-dotdotdot'
 
 class GameSingle extends Component {
-
-	extendable = null
 
 	state = {
 		isImageLoaded: false,
 	}
 
 	componentDidMount() {
-		if (this.extendable) {
-			if (this.extendable.clientHeight > MAX_RETRACTED_HEIGHT) {
-				this.props.setDescriptionExtended(false)
-			}
-		}
 		this.afterUpdate()
 	}
 
@@ -40,12 +31,11 @@ class GameSingle extends Component {
 	}
 
 	render() {
-		let {list, description, isDescriptionExtended} = this.props
+		let {list, description} = this.props
 		let game = list[0]
 		if (!game) {
 			return null
 		}
-		let listDescriptionStyle = !isDescriptionExtended ? {maxHeight: MAX_RETRACTED_HEIGHT} : {}
 		return <div className="GameSingle">
 			<table cellPadding={0} cellSpacing={0}>
 				<tbody>
@@ -91,16 +81,11 @@ class GameSingle extends Component {
 					</tr>
 				</tbody>
 			</table>
-			<div className="GameSingle__description"
-				 ref={extendable => this.extendable = extendable}
-				 style={listDescriptionStyle}>
-				{nToBr(description)}
+			<div className="GameSingle__description">
+				<Dotdotdot clamp={3}>
+					{nToBr(description)}
+				</Dotdotdot>
 			</div>
-			{!isDescriptionExtended ?
-				<div className="GameSingle__extend"
-					 onClick={() => this.props.setDescriptionExtended(true)}>
-				{L.t('extend')}
-			</div> : null}
 		</div>
 	}
 }

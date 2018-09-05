@@ -5,12 +5,9 @@ import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
 import ShareButtonMobile from "../ShareButtonMobile/ShareButtonMobile"
 import {nToBr} from "../../tools/helpers"
-
-const MAX_RETRACTED_HEIGHT = 63
+import Dotdotdot from 'react-dotdotdot'
 
 class GameSingleMobile extends Component {
-
-	extendable = null
 
 	state = {
 		isImageLoaded: false,
@@ -20,21 +17,12 @@ class GameSingleMobile extends Component {
 		this.setState({isImageLoaded: true})
 	}
 
-	componentDidMount() {
-		if (this.extendable) {
-			if (this.extendable.clientHeight > MAX_RETRACTED_HEIGHT) {
-				this.props.setDescriptionExtended(false)
-			}
-		}
-	}
-
 	render() {
-		let {list, description, isDescriptionExtended, shareText, shareImageUrl} = this.props
+		let {list, description, shareText, shareImageUrl} = this.props
 		let game = list[0]
 		if (!game) {
 			return null
 		}
-		let listDescriptionStyle = !isDescriptionExtended ? {maxHeight: MAX_RETRACTED_HEIGHT} : {}
 		return <div className="GameSingleMobile">
 			<table cellPadding={0} cellSpacing={0}>
 				<tbody>
@@ -80,16 +68,11 @@ class GameSingleMobile extends Component {
 				</button>
 				<ShareButtonMobile imageUrl={shareImageUrl} shareText={shareText} marginTop={8}/>
 			</div>
-			<div className="GameSingleMobile__description"
-				 ref={extendable => this.extendable = extendable}
-				 style={listDescriptionStyle}>
-				{nToBr(description)}
+			<div className="GameSingleMobile__description">
+				<Dotdotdot clamp={3}>
+					{nToBr(description)}
+				</Dotdotdot>
 			</div>
-			{!isDescriptionExtended ?
-				<div className="GameSingleMobile__extend"
-					 onClick={() => this.props.setDescriptionExtended(true)}>
-				{L.t('extend')}
-			</div> : null}
 		</div>
 	}
 }

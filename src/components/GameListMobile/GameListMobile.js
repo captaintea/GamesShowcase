@@ -6,24 +6,15 @@ import ShareButtonMobile from "../ShareButtonMobile/ShareButtonMobile"
 import {nToBr} from "../../tools/helpers"
 import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
+import Dotdotdot from 'react-dotdotdot'
 
 const ITEM_TITLE_ONE_ROW_HEIGHT = 18
-const MAX_RETRACTED_HEIGHT = 63
-const EXTEND_TEXT_HEIGHT = 17
 
 class GameListMobile extends Component {
 
 	state = {
 		loadedImageKeys: [],
 		titleHeightList: [],
-	}
-
-	componentDidMount() {
-		if (this.extendable) {
-			if ((this.extendable.clientHeight - EXTEND_TEXT_HEIGHT) > MAX_RETRACTED_HEIGHT) {
-				this.props.setDescriptionExtended(false)
-			}
-		}
 	}
 
 	getItemInfoMaxWidth() {
@@ -50,20 +41,14 @@ class GameListMobile extends Component {
 
 	render() {
 		let {title, description, list, shareText, shareImageUrl} = this.props.gameList
-		let descriptionStyle = !this.props.isDescriptionExtended ? {maxHeight: MAX_RETRACTED_HEIGHT} : {}
 		return <div className="GameListMobile">
 			<PanelMobile title={title}>
 				<div className="GameListMobile__description-wrapper">
-					<div className="GameListMobile__description"
-						 ref={extendable => this.extendable = extendable}
-						 style={descriptionStyle}>
-						{nToBr(description)}
+					<div className="GameListMobile__description">
+						<Dotdotdot clamp={3}>
+							{nToBr(description)}
+						</Dotdotdot>
 					</div>
-					{!this.props.isDescriptionExtended ?
-						<div className="GameListMobile__extend"
-							 onClick={() => this.props.setDescriptionExtended(true)}>
-							{L.t('extend')}
-						</div> : null}
 				</div>
 				<div className="GameListMobile__list">
 					{list.map((game, key) => {

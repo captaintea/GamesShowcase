@@ -4,11 +4,8 @@ import "./GameList.css"
 import Panel from "../Panel/Panel"
 import {nToBr} from "../../tools/helpers"
 import {setDescriptionExtended} from "../../modules/GameList"
-import L from "../../lang/L"
 import Cashback from "../Cashback/Cashback"
-
-const MAX_RETRACTED_HEIGHT = 57
-const ONE_ROW_HEIGHT = 19
+import Dotdotdot from 'react-dotdotdot'
 
 class GameList extends Component {
 
@@ -18,34 +15,20 @@ class GameList extends Component {
 		loadedImageKeys: [],
 	}
 
-	componentDidMount() {
-		if (this.extendable) {
-			if ((this.extendable.clientHeight - ONE_ROW_HEIGHT) > MAX_RETRACTED_HEIGHT) {
-				this.props.setDescriptionExtended(false)
-			}
-		}
-	}
-
 	onImageLoad(key) {
 		this.setState({loadedImageKeys: this.state.loadedImageKeys.concat([key])})
 	}
 
 	render() {
-		let {title, description, list, isDescriptionExtended} = this.props.gameList
-		let descriptionStyle = !isDescriptionExtended ? {maxHeight: MAX_RETRACTED_HEIGHT} : {}
+		let {title, description, list} = this.props.gameList
 		return <div className="GameList">
 			<Panel title={title} noMargin={true} noShadow={true}>
 				<div className="GameList__description-wrapper">
-					<div className="GameList__description"
-						 ref={extendable => this.extendable = extendable}
-						 style={descriptionStyle}>
-						{nToBr(description)}
+					<div className="GameList__description">
+						<Dotdotdot clamp={3}>
+							{nToBr(description)}
+						</Dotdotdot>
 					</div>
-					{!isDescriptionExtended ?
-						<div className="GameList__extend"
-							 onClick={() => this.props.setDescriptionExtended(true)}>
-							{L.t('extend')}
-					</div> : null}
 				</div>
 				<div className="GameList__list">
 					{list.map((game, key) => {
