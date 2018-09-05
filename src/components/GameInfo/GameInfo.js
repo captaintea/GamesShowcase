@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {connect} from "react-redux"
 import "./GameInfo.css"
 import ShareButton from "../ShareButton/ShareButton"
+import Warning from "../Warning/Warning"
 
 class GameInfo extends Component {
 
@@ -24,7 +25,8 @@ class GameInfo extends Component {
 	render() {
 		let {list, shareImageUrl, shareText} = this.props
 		let titleStyle = {minWidth: this.state.minTitleWidth}
-		return <div className="GameInfo">
+		let hasItems = list && list.length
+		return <div className="GameInfo" style={hasItems ? {} : {paddingTop: 0}}>
 			<div className="GameInfo__list">
 				{list.map((item, key) => {
 					return <div className="GameInfo__item" key={key}>
@@ -38,6 +40,7 @@ class GameInfo extends Component {
 					</div>
 				})}
 			</div>
+			<Warning borderTop={hasItems}/>
 			<ShareButton imageUrl={shareImageUrl} shareText={shareText}/>
 		</div>
 	}

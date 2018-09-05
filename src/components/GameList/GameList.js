@@ -25,7 +25,7 @@ class GameList extends Component {
 			<Panel title={title} noMargin={true} noShadow={true}>
 				<div className="GameList__description-wrapper">
 					<div className="GameList__description">
-						<Dotdotdot clamp={3}>
+						<Dotdotdot clamp={5}>
 							{nToBr(description)}
 						</Dotdotdot>
 					</div>

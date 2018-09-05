@@ -1,0 +1,27 @@
+.Warning {
+	padding-top: 17px;
+	display: flex;
+	align-items: center;
+	margin-bottom: -8px;
+
+	&--border-top {
+		border-top: 1px solid #E7E8EC;
+		margin-top: 17px;
+	}
+	
+	table {
+		margin: 0;
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		background: url("./img/warning.svg") no-repeat center center/cover;
+	}
+
+	&__text {
+		font-size: 13px;
+		color: #656565;
+		padding-left: 10px;
+	}
+}

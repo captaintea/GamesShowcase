@@ -10,6 +10,7 @@ import CommonInfoList from "./CommonInfoList"
 import CommunityList from "./CommunityList"
 import LawModule from "./LawModule"
 import DescriptionModule from "./DescriptionModule"
+import WarningModule from "./WarningModule"
 
 export default combineReducers({
 	Page,
@@ -23,4 +24,5 @@ export default combineReducers({
 	CommunityList,
 	LawModule,
 	DescriptionModule,
+	WarningModule,
 })

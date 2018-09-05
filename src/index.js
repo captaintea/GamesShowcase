@@ -19,6 +19,7 @@ import {initCommunityList} from "./modules/CommunityList"
 import {initHistory, setPageParams} from "./modules/Page"
 import {initCommonInfoList} from "./modules/CommonInfoList"
 import {initDescription} from "./modules/DescriptionModule"
+import {setWarning} from "./modules/WarningModule"
 
 VkSdk.init()
 	.then(iFrameParams => L.init(iFrameParams.getLangCode()))
@@ -86,6 +87,8 @@ function initData() {
 		'Дайте отпор Иосифу Сиду и его братьям. Разожгите огонь сопротивления. Дайте отпор Иосифу Сиду и его братьям.' +
 		' Разожгите огонь сопротивления.'
 	store.dispatch(initGameList(gameTitle, gameDescription, gameListMock, shareText, shareImageUrl))
+	let warning = {text: 'Активация ключа возможна только на территории Российской Федерации и СНГ'}
+	store.dispatch(setWarning(warning))
 	let infoTitle = 'Информация об игре'
 	let infoListMock = [
 		{title: 'Жанр', description: 'Выживание, шутер, экшен'},

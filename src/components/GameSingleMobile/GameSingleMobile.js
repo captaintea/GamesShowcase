@@ -6,6 +6,7 @@ import {setDescriptionExtended} from "../../modules/GameList"
 import ShareButtonMobile from "../ShareButtonMobile/ShareButtonMobile"
 import {nToBr} from "../../tools/helpers"
 import Dotdotdot from 'react-dotdotdot'
+import WarningMobile from "../WarningMobile/WarningMobile"
 
 class GameSingleMobile extends Component {
 
@@ -69,10 +70,11 @@ class GameSingleMobile extends Component {
 				<ShareButtonMobile imageUrl={shareImageUrl} shareText={shareText} marginTop={8}/>
 			</div>
 			<div className="GameSingleMobile__description">
-				<Dotdotdot clamp={3}>
+				<Dotdotdot clamp={10}>
 					{nToBr(description)}
 				</Dotdotdot>
 			</div>
+			<WarningMobile/>
 		</div>
 	}
 }

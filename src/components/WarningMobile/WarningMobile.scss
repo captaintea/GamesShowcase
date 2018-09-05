@@ -1,0 +1,22 @@
+.WarningMobile {
+	margin-top: 15px;
+	padding-top: 17px;
+	border-top: 0.5px solid rgba(0,0,0,0.12);
+
+	table {
+		margin: 0 !important;
+	}
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+		background: url("./img/warning.svg") no-repeat center center/cover;
+	}
+
+	&__text {
+		font-size: 14px;
+		color: #71757A;
+		line-height: 18px;
+		padding-left: 12px;
+	}
+}

@@ -6,6 +6,20 @@ import {setDescriptionExtended} from "../../modules/DescriptionModule"
 
 class Description extends Component {
 
+	componentDidMount() {
+		this.afterUpdate()
+	}
+
+	componentDidUpdate() {
+		this.afterUpdate()
+	}
+
+	afterUpdate() {
+		if (window.onChangeHeight) {
+			window.onChangeHeight(true)
+		}
+	}
+
 	render() {
 		let {title, code, codeShort, extended} = this.props
 		return <div className="Description" style={codeShort ? {} : {paddingBottom: 25}}>

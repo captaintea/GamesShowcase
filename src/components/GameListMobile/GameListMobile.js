@@ -7,6 +7,7 @@ import {nToBr} from "../../tools/helpers"
 import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
 import Dotdotdot from 'react-dotdotdot'
+import WarningMobile from "../WarningMobile/WarningMobile"
 
 const ITEM_TITLE_ONE_ROW_HEIGHT = 18
 
@@ -45,7 +46,7 @@ class GameListMobile extends Component {
 			<PanelMobile title={title}>
 				<div className="GameListMobile__description-wrapper">
 					<div className="GameListMobile__description">
-						<Dotdotdot clamp={3}>
+						<Dotdotdot clamp={10}>
 							{nToBr(description)}
 						</Dotdotdot>
 					</div>
@@ -112,6 +113,7 @@ class GameListMobile extends Component {
 					})}
 				</div>
 				<ShareButtonMobile imageUrl={shareImageUrl} shareText={shareText} marginTop={20}/>
+				<WarningMobile/>
 			</PanelMobile>
 		</div>
 	}

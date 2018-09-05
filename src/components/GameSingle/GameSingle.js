@@ -82,7 +82,7 @@ class GameSingle extends Component {
 				</tbody>
 			</table>
 			<div className="GameSingle__description">
-				<Dotdotdot clamp={3}>
+				<Dotdotdot clamp={5}>
 					{nToBr(description)}
 				</Dotdotdot>
 			</div>
