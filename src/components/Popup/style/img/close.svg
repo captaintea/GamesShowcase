@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="User" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="web_4" transform="translate(-828.000000, -398.000000)">
+            <g id="Group-12" transform="translate(410.000000, 373.000000)">
+                <g id="Group" transform="translate(412.000000, 19.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M7,7 L17,17" id="Path-2" stroke="#828A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M7,7 L17,17" id="Path-2-Copy" stroke="#828A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,48 @@
+.Email {
+	background: #FFFFFF;
+	border-radius: 8px;
+	overflow: hidden;
+	width: 460px;
+
+	&__body {
+		padding: 25px 30px;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 14px;
+		color: #222222;
+		line-height: 18px;
+	}
+
+	&__description {
+		font-size: 13px;
+		color: #656565;
+		line-height: 18px;
+		padding-bottom: 15px;
+	}
+
+	button {
+		margin: 0;
+	}
+
+	&__input {
+		display: flex;
+
+		input {
+			box-sizing: border-box;
+			margin: 0 10px 0 0;
+			width: 100%;
+		}
+	}
+
+	&__footer {
+		font-size: 12.5px;
+		color: #828282;
+		letter-spacing: 0;
+		line-height: 17px;
+		border-top: 1px solid #E7E8EC;
+		background: #F7F8FA;
+		padding: 20px 30px;
+	}
+}

@@ -1,0 +1,40 @@
+.Popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1001;
+	overflow: auto;
+
+	&__wrapper {
+		opacity: 0;
+		padding: 20px;
+		display: flex;
+		justify-content: center;
+		min-height: 100%;
+		box-sizing: border-box;
+	}
+
+	&__window {
+		overflow: hidden;
+		border-radius: 8px;
+		position: relative;
+	}
+
+	&__body {
+		position: relative;
+	}
+
+	&__close {
+		position: absolute;
+		top: 26px;
+		right: 30px;
+		width: 14px;
+		height: 14px;
+		background: url("./img/close.svg") no-repeat center center/contain;
+		cursor: pointer;
+		z-index: 1;
+	}
+}

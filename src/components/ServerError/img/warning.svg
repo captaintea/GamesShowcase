@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>error_56</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="User" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web_4-copy-2" transform="translate(-618.000000, -409.000000)">
+            <g id="Group-12" transform="translate(490.000000, 373.000000)">
+                <g id="error_56" transform="translate(122.000000, 30.000000)">
+                    <rect id="Bounds" opacity="0.1" x="0" y="0" width="56" height="56"></rect>
+                    <path d="M28,50 C15.8497355,50 6,40.1502645 6,28 C6,15.8497355 15.8497355,6 28,6 C40.1502645,6 50,15.8497355 50,28 C50,40.1502645 40.1502645,50 28,50 Z M28,47 C38.4934102,47 47,38.4934102 47,28 C47,17.5065898 38.4934102,9 28,9 C17.5065898,9 9,17.5065898 9,28 C9,38.4934102 17.5065898,47 28,47 Z M28,17.5 C29.1045695,17.5 30,18.3954305 30,19.5 L30,28 C30,29.1045695 29.1045695,30 28,30 C26.8954305,30 26,29.1045695 26,28 L26,19.5 C26,18.3954305 26.8954305,17.5 28,17.5 Z M28,33 C29.3807119,33 30.5,34.1192881 30.5,35.5 C30.5,36.8807119 29.3807119,38 28,38 C26.6192881,38 25.5,36.8807119 25.5,35.5 C25.5,34.1192881 26.6192881,33 28,33 Z" id="Oval" fill="#B3B6BB"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,11 +10,15 @@ import RequirementListMobile from "../../components/RequirementListMobile/Requir
 import LawMobile from "../../components/LawMobile/LawMobile"
 import CommunityListMobile from "../../components/CommunityListMobile/CommunityListMobile"
 import GameListMobile from "../../components/GameListMobile/GameListMobile"
-import {PAGE_ADDITION, PAGE_MAIN, PAGE_VIDEO} from "../../modules/Page"
+import {PAGE_ADDITION, PAGE_MAIN, PAGE_VIDEO, POPUP_EMAIL, POPUP_ERROR, setPageParams} from "../../modules/Page"
 import PageVideoMobile from "../../components/PageVideoMobile/PageVideoMobile"
 import PageAdditionMobile from "../../components/PageAdditionMobile/PageAdditionMobile"
 import CommonInfoListMobile from "../../components/CommonInfoListMobile/CommonInfoListMobile"
 import DescriptionMobile from "../../components/DescriptionMobile/DescriptionMobile"
+import PopupMobile from "../../components/PopupMobile/PopupMobile"
+import EmailMobile from "../../components/EmailMobile/EmailMobile"
+import WaitScreenMobile from "../../components/WaitScreenMobile/WaitScreenMobile"
+import ServerErrorMobile from "../../components/ServerErrorMobile/ServerErrorMobile"
 
 class MobileContainer extends Component {
 
@@ -58,6 +62,21 @@ class MobileContainer extends Component {
 	scrollTop() {
 		if (this.scrollNode) {
 			this.scrollNode.scrollTop = 0
+		}
+	}
+
+	onPopupClose() {
+		this.props.setPageParams({})
+	}
+
+	renderPopupContent() {
+		switch (this.props.popup) {
+			case POPUP_EMAIL:
+				return <EmailMobile/>
+			case POPUP_ERROR:
+				return <ServerErrorMobile message={this.props.paymentError}/>
+			default:
+				return null
 		}
 	}
 
@@ -107,6 +126,16 @@ class MobileContainer extends Component {
 				 ref={node => this.scrollNode = node}
 				 className="MobileContainer__wrapper">
 				{this.renderPage(this.props.page)}
+				{this.props.popup && !this.props.loading ? <div style={wrapperStyle}
+										 onClick={() => this.onPopupClose()}
+										 className="MobileContainer__shadow">
+					<div onClick={e => e.stopPropagation()}>
+						<PopupMobile onClose={() => this.onPopupClose()}>
+							{this.renderPopupContent()}
+						</PopupMobile>
+					</div>
+				</div> : null}
+				{this.props.loading ? <WaitScreenMobile deviceHeight={MobileContainer.deviceHeight}/> : null}
 			</div>
 		</div>
 
@@ -118,7 +147,10 @@ function mapStateToProps(state) {
 	return {
 		page: state.Page.name,
 		isSingleGame: state.GameList.list.length <= 1,
+		popup: state.Page.params.popup,
+		loading: state.PaymentModule.loading,
+		paymentError: state.PaymentModule.error,
 	}
 }
 
-export default connect(mapStateToProps, {})(MobileContainer)
+export default connect(mapStateToProps, {setPageParams})(MobileContainer)

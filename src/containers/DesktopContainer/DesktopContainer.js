@@ -6,7 +6,7 @@ import Carousel from "../../components/Carousel/Carousel"
 import GameSingle from "../../components/GameSingle/GameSingle"
 import GameInfo from "../../components/GameInfo/GameInfo"
 import VideoList from "../../components/VideoList/VideoList"
-import {PAGE_ADDITION, PAGE_MAIN, PAGE_VIDEO} from "../../modules/Page"
+import {PAGE_ADDITION, PAGE_MAIN, PAGE_VIDEO, POPUP_EMAIL, POPUP_ERROR, setPageParams} from "../../modules/Page"
 import PageVideo from "../../components/PageVideo/PageVideo"
 import AdditionList from "../../components/AdditionList/AdditionList"
 import PageAddition from "../../components/PageAddition/PageAddition"
@@ -16,6 +16,10 @@ import Law from "../../components/Law/Law"
 import GameList from "../../components/GameList/GameList"
 import CommonInfoList from "../../components/CommonInfoList/CommonInfoList"
 import Description from "../../components/Description/Description"
+import Popup from "../../components/Popup/Popup"
+import Email from "../../components/Email/Email"
+import WaitScreen from "../../components/WaitScreen/WaitScreen"
+import ServerError from "../../components/ServerError/ServerError"
 
 class DesktopContainer extends Component {
 
@@ -86,7 +90,7 @@ class DesktopContainer extends Component {
 
     renderMainPage() {
     	let {isSingleGame} = this.props
-		return <div className="DesktopContainer">
+		return <div>
 			<Carousel/>
 			{isSingleGame ?
 				<GameSingle/>
@@ -108,16 +112,19 @@ class DesktopContainer extends Component {
 		</div>
 	}
 
-	renderVideoPage() {
-    	return <div className="DesktopContainer">
-			<PageVideo/>
-		</div>
+	onPopupClose() {
+		this.props.setPageParams({})
 	}
 
-	renderAdditionPage() {
-		return <div className="DesktopContainer">
-			<PageAddition/>
-		</div>
+	renderPopupContent() {
+		switch (this.props.popup) {
+			case POPUP_EMAIL:
+				return <Email/>
+			case POPUP_ERROR:
+				return <ServerError message={this.props.paymentError}/>
+			default:
+				return null
+		}
 	}
 
     renderPage(page) {
@@ -125,16 +132,23 @@ class DesktopContainer extends Component {
 			case PAGE_MAIN:
 				return this.renderMainPage()
 			case PAGE_VIDEO:
-				return this.renderVideoPage()
+				return <PageVideo/>
 			case PAGE_ADDITION:
-				return this.renderAdditionPage()
+				return <PageAddition/>
 			default:
 				return null
 		}
 	}
 
     render() {
-    	return this.renderPage(this.props.page)
+    	return <div className="DesktopContainer">
+			{this.renderPage(this.props.page)}
+			{this.props.popup && !this.props.loading ? <Popup onClose={() => this.onPopupClose()}
+									   footerRight={null}>
+				{this.renderPopupContent()}
+			</Popup> : null}
+			{this.props.loading ? <WaitScreen offset={48}/> : null}
+		</div>
     }
 }
 
@@ -142,7 +156,10 @@ function mapStateToProps(state) {
 	return {
 		page: state.Page.name,
 		isSingleGame: state.GameList.list.length <= 1,
+		popup: state.Page.params.popup,
+		loading: state.PaymentModule.loading,
+		paymentError: state.PaymentModule.error,
 	}
 }
 
-export default connect(mapStateToProps, {})(DesktopContainer)
+export default connect(mapStateToProps, {setPageParams})(DesktopContainer)

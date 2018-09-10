@@ -6,6 +6,7 @@ import {nToBr} from "../../tools/helpers"
 import {setDescriptionExtended} from "../../modules/GameList"
 import Cashback from "../Cashback/Cashback"
 import Dotdotdot from 'react-dotdotdot'
+import {handlePayment} from "../../modules/PaymentModule"
 
 class GameList extends Component {
 
@@ -17,6 +18,10 @@ class GameList extends Component {
 
 	onImageLoad(key) {
 		this.setState({loadedImageKeys: this.state.loadedImageKeys.concat([key])})
+	}
+
+	onButtonClick(game) {
+		this.props.handlePayment(game)
 	}
 
 	render() {
@@ -73,8 +78,8 @@ class GameList extends Component {
 									</span>
 									</div>
 									<div className="GameList__controls">
-										<button className="Button Button--green">
-											{game.buttonTextMobile}
+										<button className="Button Button--green" onClick={() => this.onButtonClick(game)}>
+											{game.buttonText}
 										</button>
 									</div>
 								</div>
@@ -94,4 +99,4 @@ function map(state) {
 	}
 }
 
-export default connect(map, {setDescriptionExtended})(GameList)
+export default connect(map, {setDescriptionExtended, handlePayment})(GameList)

@@ -2,9 +2,9 @@ const initState = {
 	text: null
 }
 
-const SET_WARNING = "Law.SET_WARNING"
+const SET_WARNING = "Warning.SET_WARNING"
 
-const Description = (state = initState, action) => {
+const Warning = (state = initState, action) => {
 	switch (action.type) {
 		case SET_WARNING:
 			return Object.assign({}, state, action.update)
@@ -20,4 +20,4 @@ export function setWarning(update) {
 	}
 }
 
-export default Description
+export default Warning

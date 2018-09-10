@@ -1,0 +1,24 @@
+.ServerErrorMobile {
+	background: #FFFFFF;
+	border-radius: 12px;
+	overflow: hidden;
+
+	&__body {
+		padding: 37px 16px 32px;
+	}
+
+	&__icon {
+		width: 47px;
+		height: 47px;
+		background: url("./img/warning.svg") no-repeat center center/contain;
+		margin: 0 auto;
+	}
+
+	&__message {
+		padding-top: 15px;
+		font-size: 16px;
+		color: #222222;
+		text-align: center;
+		font-weight: 600;
+	}
+}

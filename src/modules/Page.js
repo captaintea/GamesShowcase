@@ -6,6 +6,9 @@ export const PAGE_MAIN = "PAGE_MAIN"
 export const PAGE_VIDEO = "PAGE_VIDEO"
 export const PAGE_ADDITION = "PAGE_ADDITION"
 
+export const POPUP_EMAIL = "Popup.POPUP_EMAIL"
+export const POPUP_ERROR = "Popup.POPUP_ERROR"
+
 const initState = {
 	path: [],
 	name: PAGE_MAIN,

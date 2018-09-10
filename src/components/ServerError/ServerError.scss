@@ -1,0 +1,26 @@
+.ServerError {
+	background: #FFFFFF;
+	border-radius: 12px;
+	overflow: hidden;
+	width: 300px;
+
+	&__body {
+		padding: 36px;
+	}
+
+	&__icon {
+		width: 44px;
+		height: 44px;
+		background: url("./img/warning.svg") no-repeat center center/contain;
+		margin: 0 auto;
+	}
+
+	&__message {
+		padding-top: 11px;
+		padding-bottom: 4px;
+		font-size: 16px;
+		color: #222222;
+		text-align: center;
+		font-weight: 600;
+	}
+}

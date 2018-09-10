@@ -7,6 +7,7 @@ import ShareButtonMobile from "../ShareButtonMobile/ShareButtonMobile"
 import {nToBr} from "../../tools/helpers"
 import Dotdotdot from 'react-dotdotdot'
 import WarningMobile from "../WarningMobile/WarningMobile"
+import {handlePayment} from "../../modules/PaymentModule"
 
 class GameSingleMobile extends Component {
 
@@ -16,6 +17,10 @@ class GameSingleMobile extends Component {
 
 	onImageLoad() {
 		this.setState({isImageLoaded: true})
+	}
+
+	onButtonClick(game) {
+		this.props.handlePayment(game)
 	}
 
 	render() {
@@ -64,7 +69,7 @@ class GameSingleMobile extends Component {
 				</tbody>
 			</table>
 			<div className="GameSingleMobile__controls">
-				<button className="Button Button--green mobile">
+				<button className="Button Button--green mobile" onClick={() => this.onButtonClick(game)}>
 					{game.buttonTextMobile}
 				</button>
 				<ShareButtonMobile imageUrl={shareImageUrl} shareText={shareText} marginTop={8}/>
@@ -90,4 +95,4 @@ function map(state) {
 	}
 }
 
-export default connect(map, {setDescriptionExtended})(GameSingleMobile)
+export default connect(map, {setDescriptionExtended, handlePayment})(GameSingleMobile)

@@ -1,0 +1,73 @@
+.EmailMobile {
+	background: #FFFFFF;
+	border-radius: 12px;
+	overflow: hidden;
+
+	&__body {
+		padding: 12px 12px 0;
+	}
+
+	&__title {
+		font-size: 17px;
+		color: #222222;
+		line-height: 21px;
+		font-weight: 600;
+		padding-bottom: 12px;
+	}
+
+	&__description {
+		font-size: 15px;
+		color: #71757A;
+		line-height: 18px;
+		padding-bottom: 17px;
+	}
+
+	&__input {
+		padding-bottom: 20px;
+	}
+
+	&__controls {
+		padding-bottom: 20px;
+
+		button {
+			width: 100%;
+			padding-top: 9px;
+			padding-bottom: 9px;
+		}
+	}
+
+	input {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 12px;
+		$placeholder-color: #909499;
+		border-radius: 8px;
+		outline: none;
+		font-size: 15px;
+		background: #F2F3F5;
+		border: 0.5px solid rgba(0,0,0,0.15);
+
+		&::-webkit-input-placeholder {
+			color: $placeholder-color;
+		}
+		&::-moz-placeholder {
+			color: $placeholder-color;
+		}
+		&:-ms-input-placeholder {
+			color: $placeholder-color;
+		}
+		&:-moz-placeholder {
+			color: $placeholder-color;
+		}
+	}
+
+	&__footer {
+		border-top: 1px solid #E7E8EC;
+		background: #F7F8FA;
+		padding: 17px 20px 19px 20px;
+		font-size: 13px;
+		color: #71757A;
+		text-align: center;
+		line-height: 18px;
+	}
+}

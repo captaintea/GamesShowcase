@@ -8,6 +8,7 @@ import L from "../../lang/L"
 import {setDescriptionExtended} from "../../modules/GameList"
 import Dotdotdot from 'react-dotdotdot'
 import WarningMobile from "../WarningMobile/WarningMobile"
+import {handlePayment} from "../../modules/PaymentModule"
 
 const ITEM_TITLE_ONE_ROW_HEIGHT = 18
 
@@ -38,6 +39,10 @@ class GameListMobile extends Component {
 			newList[key] = titleRef.clientHeight
 			this.setState({titleHeightList: newList})
 		}
+	}
+
+	onButtonClick(game) {
+		this.props.handlePayment(game)
 	}
 
 	render() {
@@ -97,7 +102,8 @@ class GameListMobile extends Component {
 											: null}
 											<div className="GameListMobile__controls">
 												<button className={"Button Button--green mobile" +
-														(this.isSmallScreen() ? ' small' : '')}>
+														(this.isSmallScreen() ? ' small' : '')}
+														onClick={() => this.onButtonClick(game)}>
 													{!this.isSmallScreen() ? game.buttonTextMobile : null}
 												</button>
 											</div>
@@ -127,4 +133,4 @@ function map(state) {
 	}
 }
 
-export default connect(map, {setDescriptionExtended})(GameListMobile)
+export default connect(map, {setDescriptionExtended, handlePayment})(GameListMobile)

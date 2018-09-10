@@ -5,6 +5,7 @@ import {setDescriptionExtended} from "../../modules/GameList"
 import {nToBr} from "../../tools/helpers"
 import Cashback from "../Cashback/Cashback"
 import Dotdotdot from 'react-dotdotdot'
+import {handlePayment} from "../../modules/PaymentModule"
 
 class GameSingle extends Component {
 
@@ -28,6 +29,10 @@ class GameSingle extends Component {
 		if (window.onChangeHeight) {
 			window.onChangeHeight(true)
 		}
+	}
+
+	onButtonClick(game) {
+		this.props.handlePayment(game)
 	}
 
 	render() {
@@ -61,7 +66,7 @@ class GameSingle extends Component {
 							<div className="GameSingle__item-info-bottom">
 								<div className="GameSingle__bottom-left">
 									<div className="GameSingle__controls">
-										<button className="Button Button--green">
+										<button className="Button Button--green" onClick={() => this.onButtonClick(game)}>
 											{game.buttonText}
 										</button>
 									</div>
@@ -98,4 +103,4 @@ function map(state) {
 	}
 }
 
-export default connect(map, {setDescriptionExtended})(GameSingle)
+export default connect(map, {setDescriptionExtended, handlePayment})(GameSingle)

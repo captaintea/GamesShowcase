@@ -65,7 +65,7 @@ function initData() {
 			name: 'ONE ROW TITLE',
 			price: 1999,
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
-			button_text: 'Купить игру',
+			button_text: 'Купить',
 			button_text_mobile: 'Купить',
 			cashback: 5,
 			is_cashback_in_percent: true,
@@ -76,7 +76,7 @@ function initData() {
 			price: 1999,
 			discount: 15,
 			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
-			button_text: 'Купить игру',
+			button_text: 'Купить',
 			button_text_mobile: 'Купить',
 		},*/
 	]
