@@ -82,11 +82,16 @@ export function getTimeForUser(timeInSeconds, skipHoursIfNeed = false) {
 	}
 }
 
-export function getAppLink() {
+export function getAppLink(withHash = false) {
 	let prefix = 'https://vk.com/app'
+	let link = ''
 	if (VkSdk.getStartParams().groupId) {
-		return prefix + VkSdk.getStartParams().apiId + '_-' + VkSdk.getStartParams().groupId
+		link =  prefix + VkSdk.getStartParams().apiId + '_-' + VkSdk.getStartParams().groupId
 	} else {
-		return prefix + VkSdk.getStartParams().apiId
+		link = prefix + VkSdk.getStartParams().apiId
 	}
+	if (withHash) {
+		link += '#' + VkSdk.getStartParams().hash
+	}
+	return link
 }
