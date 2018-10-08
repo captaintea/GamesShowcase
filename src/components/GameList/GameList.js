@@ -7,6 +7,8 @@ import {setDescriptionExtended} from "../../modules/GameList"
 import Cashback from "../Cashback/Cashback"
 import Dotdotdot from 'react-dotdotdot'
 import {handlePayment} from "../../modules/PaymentModule"
+import Warning from "../Warning/Warning"
+import ShareButton from "../ShareButton/ShareButton"
 
 class GameList extends Component {
 
@@ -25,9 +27,9 @@ class GameList extends Component {
 	}
 
 	render() {
-		let {title, description, list} = this.props.gameList
+		let {title, description, list, shareImageUrl, shareText} = this.props.gameList
 		return <div className="GameList">
-			<Panel title={title} noMargin={true} noShadow={true}>
+			<Panel title={title}>
 				<div className="GameList__description-wrapper">
 					<div className="GameList__description">
 						<Dotdotdot clamp={5}>
@@ -87,6 +89,8 @@ class GameList extends Component {
 						</div>
 					})}
 				</div>
+				<Warning borderTop={true}/>
+				<ShareButton imageUrl={shareImageUrl} shareText={shareText}/>
 			</Panel>
 		</div>
 	}
@@ -96,6 +100,8 @@ class GameList extends Component {
 function map(state) {
 	return {
 		gameList: state.GameList,
+		shareImageUrl: state.GameList.shareImageUrl,
+		shareText: state.GameList.shareText,
 	}
 }
 

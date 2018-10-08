@@ -101,14 +101,12 @@ class DesktopContainer extends Component {
 				<div className="DesktopContainer__line">
 				</div>
 			</div>
-			<GameInfo/>
 			<VideoList/>
 			<AdditionList/>
 			<Description/>
 			<RequirementList/>
 			<CommonInfoList/>
 			<CommunityList/>
-			<Law/>
 		</div>
 	}
 

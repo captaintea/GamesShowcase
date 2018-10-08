@@ -89,7 +89,7 @@ class MobileContainer extends Component {
 				:
 				<GameListMobile deviceWidth={MobileContainer.deviceWidth} deviceHeight={MobileContainer.deviceHeight}/>
 			}
-			<GameInfoMobile/>
+			{/*<GameInfoMobile/>*/}
 			<VideoListMobile deviceWidth={MobileContainer.deviceWidth}
 							 deviceHeight={MobileContainer.deviceHeight}
 							 scrollTop={() => this.scrollTop()}/>
@@ -100,7 +100,6 @@ class MobileContainer extends Component {
 			<RequirementListMobile/>
 			<CommonInfoListMobile/>
 			<CommunityListMobile deviceWidth={MobileContainer.deviceWidth} deviceHeight={MobileContainer.deviceHeight}/>
-			<LawMobile/>
 		</div>
 	}
 

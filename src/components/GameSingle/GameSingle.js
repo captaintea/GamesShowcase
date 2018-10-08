@@ -6,6 +6,8 @@ import {nToBr} from "../../tools/helpers"
 import Cashback from "../Cashback/Cashback"
 import Dotdotdot from 'react-dotdotdot'
 import {handlePayment} from "../../modules/PaymentModule"
+import ShareButton from "../ShareButton/ShareButton"
+import Warning from "../Warning/Warning"
 
 class GameSingle extends Component {
 
@@ -36,7 +38,7 @@ class GameSingle extends Component {
 	}
 
 	render() {
-		let {list, description} = this.props
+		let {list, description, shareImageUrl, shareText} = this.props
 		let game = list[0]
 		if (!game) {
 			return null
@@ -91,6 +93,8 @@ class GameSingle extends Component {
 					{nToBr(description)}
 				</Dotdotdot>
 			</div>
+			<Warning borderTop={true}/>
+			<ShareButton imageUrl={shareImageUrl} shareText={shareText}/>
 		</div>
 	}
 }
@@ -100,6 +104,8 @@ function map(state) {
 		list: state.GameList.list,
 		description: state.GameList.description,
 		isDescriptionExtended: state.GameList.isDescriptionExtended,
+		shareImageUrl: state.GameList.shareImageUrl,
+		shareText: state.GameList.shareText,
 	}
 }
 
