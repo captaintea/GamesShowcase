@@ -12,6 +12,8 @@ export class GameItem {
 	_buttonTextMobile = null
 	_cashback = null
 	_isCashbackInPercent = false
+	_saleStartAt = null
+	_saleFinishAt = null
 
 
 	static fromRaw(raw) {
@@ -26,6 +28,8 @@ export class GameItem {
 		item._buttonTextMobile = raw.button_text_mobile
 		item._cashback = raw.cashback
 		item._isCashbackInPercent = raw.is_cashback_in_percent ? raw.is_cashback_in_percent : false
+		item._saleStartAt = raw.sale_start_at
+		item._saleFinishAt = raw.sale_finish_at
 		return item
 	}
 
@@ -79,6 +83,14 @@ export class GameItem {
 
 	get isCashbackInPercent() {
 		return this._isCashbackInPercent
+	}
+
+	get saleStartAt() {
+		return this._saleStartAt
+	}
+
+	get saleFinishAt() {
+		return this._saleFinishAt
 	}
 }
 

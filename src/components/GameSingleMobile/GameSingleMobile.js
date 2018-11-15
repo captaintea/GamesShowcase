@@ -8,6 +8,7 @@ import {nToBr} from "../../tools/helpers"
 import Dotdotdot from 'react-dotdotdot'
 import WarningMobile from "../WarningMobile/WarningMobile"
 import {handlePayment} from "../../modules/PaymentModule"
+import SaleMobile from "../SaleMobile/SaleMobile"
 
 class GameSingleMobile extends Component {
 
@@ -74,6 +75,8 @@ class GameSingleMobile extends Component {
 				</button>
 				<ShareButtonMobile imageUrl={shareImageUrl} shareText={shareText} marginTop={8}/>
 			</div>
+			{game.saleStartAt && game.saleFinishAt ?
+				<SaleMobile startAt={game.saleStartAt} finishAt={game.saleFinishAt}/> : null}
 			<div className="GameSingleMobile__description">
 				<Dotdotdot clamp={10}>
 					{nToBr(description)}

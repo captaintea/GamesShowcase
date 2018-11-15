@@ -60,6 +60,8 @@ function initData() {
 			button_text: 'Купить игру',
 			button_text_mobile: 'Купить',
 			cashback: 149,
+			sale_start_at: '15 ноября 2018 00:00',
+			sale_finish_at: '25 ноября 2018 00:00',
 		},
 		/*{
 			name: 'ONE ROW TITLE',

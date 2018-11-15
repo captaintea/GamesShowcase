@@ -6,6 +6,7 @@ import {nToBr} from "../../tools/helpers"
 import Cashback from "../Cashback/Cashback"
 import Dotdotdot from 'react-dotdotdot'
 import {handlePayment} from "../../modules/PaymentModule"
+import Sale from "../Sale/Sale"
 
 class GameSingle extends Component {
 
@@ -86,6 +87,8 @@ class GameSingle extends Component {
 					</tr>
 				</tbody>
 			</table>
+			{game.saleStartAt && game.saleFinishAt ?
+				<Sale startAt={game.saleStartAt} finishAt={game.saleFinishAt}/> : null}
 			<div className="GameSingle__description">
 				<Dotdotdot clamp={5}>
 					{nToBr(description)}

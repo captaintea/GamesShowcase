@@ -26,6 +26,7 @@ export default function ru() {
 			forward: 'Продолжить',
 			after_payment: 'После оплаты код активации товара придёт в личное сообщение ВКонтакте',
 			server_error: 'Ошибка сервера',
+			sale_period: 'Акция действительна только с {{startAt}} по {{finishAt}}.',
         }
     }
 }
