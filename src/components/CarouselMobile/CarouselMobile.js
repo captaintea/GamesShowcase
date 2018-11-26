@@ -42,6 +42,10 @@ class CarouselMobile extends Component {
 		}
 	}
 
+	isSingleImage() {
+		return this.props.list.length === 1
+	}
+
 	render() {
 		let {list} = this.props
 		let settings = {
@@ -60,7 +64,8 @@ class CarouselMobile extends Component {
 			slidesToScroll: 1,
 			dotsClass: "CarouselMobile__dot-list",
 		};
-		return <div ref={(el) => {this.carousel = el}} className="CarouselMobile" style={{maxWidth: this.props.deviceWidth}} onTouchMove={e => e.preventDefault()}>
+		return <div ref={(el) => {this.carousel = el}} className={"CarouselMobile"+ (this.isSingleImage() ? ' CarouselMobile--single' : '')}
+					style={{maxWidth: this.props.deviceWidth}} onTouchMove={e => e.preventDefault()}>
 			<Slider {...settings}>
 				{list.map((cover, key) => {
 					let style = {
