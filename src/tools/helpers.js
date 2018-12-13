@@ -95,3 +95,7 @@ export function getAppLink(withHash = false) {
 	}
 	return link
 }
+
+export function isWindows() {
+	return window.navigator.platform.indexOf('Win') > -1
+}

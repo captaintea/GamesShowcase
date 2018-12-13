@@ -12,6 +12,7 @@ export class AdditionItem {
 	_showPrice = true
 	_insteadOfPrice = null
 	_platform = null
+	_downloadForWindows = true
 
 	static fromRaw(raw) {
 		let item = new AdditionItem()
@@ -26,6 +27,7 @@ export class AdditionItem {
 		item._showPrice = raw.show_price
 		item._insteadOfPrice = raw.instead_of_price
 		item._platform = raw.platform
+		item._downloadForWindows = raw.download_for_windows
 		return item
 	}
 
@@ -85,6 +87,10 @@ export class AdditionItem {
 
 	get platform() {
 		return this._platform
+	}
+
+	get downloadForWindows() {
+		return this._downloadForWindows
 	}
 
 	static getPlatformList() {

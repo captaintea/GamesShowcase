@@ -149,10 +149,11 @@ function initData() {
 		{
 			image_url: 'https://unsplash.it/272?random',
 			name: 'Ghosted Crate',
-			url: 'https://vk.com/id0',
+			url: 'https://static.dl.mail.ru/WarfaceLoader.exe',
 			show_price: false,
 			platform: 'ps4',
 			instead_of_price: 'payment_code',
+			download_for_windows: true,
 		},
 		{
 			image_url: 'https://picsum.photos/272?random',

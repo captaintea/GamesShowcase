@@ -1,5 +1,7 @@
 import React, {Component} from "react"
 import "./ProductItem.css"
+import L from "../../lang/L"
+import {isWindows} from "../../tools/helpers"
 
 export default class ProductItem extends Component {
 
@@ -33,7 +35,7 @@ export default class ProductItem extends Component {
 	renderInsteadOfPrice(product) {
 		return <div>
 			<div className="ProductItem__instead-of-price">
-				{product.getInsteadOfPriceView()}
+				{product.downloadForWindows ? L.t('download_for_win') : product.getInsteadOfPriceView()}
 			</div>
 		</div>
 	}
@@ -44,9 +46,14 @@ export default class ProductItem extends Component {
 		if (width) {
 			style.width = width
 		}
+		let linksStyle = {}
+		if (product.downloadForWindows && !isWindows()) {
+			style.opacity = 0.7
+			linksStyle.pointerEvents = 'none'
+		}
 		return <div className="ProductItem" style={style}>
 			<div className="ProductItem__image-wrapper">
-				<a target="_blank" href={product.url}>
+				<a target="_blank" href={product.url} style={linksStyle}>
 					<img className="ProductItem__image"
 						 onLoad={() => this.onImageLoad()}
 						 alt={product.name}
@@ -63,7 +70,7 @@ export default class ProductItem extends Component {
 				</a>
 			</div>
 			<div className="ProductItem__title-wrapper">
-				<a target="_blank" href={product.url}>
+				<a target="_blank" href={product.url} style={linksStyle}>
 					<span className="ProductItem__title">
 						{product.name}
 					</span>
