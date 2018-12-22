@@ -30,6 +30,14 @@ VkSdk.init()
 		// а мобильная на domain/mobile. Иначе этот признак не будет работать.
 		let isMobile = window.location.pathname.indexOf('/mobile') === 0
 
+		let hash = VkSdk.getStartParams().hash
+		switch (hash) {
+			case 'sniper':
+				initDataSniper()
+				break;
+			default:
+				initDataVeteran()
+		}
 		initData()
 		initHistory(store)
 		store.dispatch(setPageParams({display_name: store.getState().GameList.title}))
@@ -43,7 +51,7 @@ VkSdk.init()
 		mount(<Error error={e}/>)
 	})
 
-function initData() {
+function initDataSniper() {
 	let coverListMock = [
 		{url: 'https://games-showcase.vkforms.ru/cover_1.jpeg'},
 		{url: 'https://games-showcase.vkforms.ru/cover_2.jpeg'},
@@ -52,7 +60,37 @@ function initData() {
 	store.dispatch(initCoverList(coverListMock))
 	let gameListMock = [
 		{
-			name: 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS',
+			name: 'Снайпер',
+			description: 'Игра',
+			price: 1999,
+			discount: 15,
+			image_url: 'https://pp.userapi.com/c846418/v846418281/157d51/1vFvif_prxM.jpg',
+			button_text: 'Купить игру',
+			button_text_mobile: 'Купить',
+			cashback: 149,
+			sale_start_at: '15 ноября 2018 00:00',
+			sale_finish_at: '25 ноября 2018 00:00',
+		},
+	]
+	let gameTitle = 'Far Cry 5'
+	let shareText = 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS - отличная игра'
+	let shareImageUrl = 'https://pp.userapi.com/c846418/v846418281/157d51/1vFvif_prxM.jpg'
+	let gameDescription = 'Округ Хоуп в штате Монтана захвачен фанатиками культа Врата Эдема. ' +
+		'Дайте отпор Иосифу Сиду и его братьям. Разожгите огонь сопротивления. Дайте отпор Иосифу Сиду и его братьям.' +
+		' Разожгите огонь сопротивления.'
+	store.dispatch(initGameList(gameTitle, gameDescription, gameListMock, shareText, shareImageUrl))
+}
+
+function initDataVeteran() {
+	let coverListMock = [
+		{url: 'https://games-showcase.vkforms.ru/cover_1.jpeg'},
+		{url: 'https://games-showcase.vkforms.ru/cover_2.jpeg'},
+		{url: 'https://games-showcase.vkforms.ru/cover_3.jpeg'},
+	]
+	store.dispatch(initCoverList(coverListMock))
+	let gameListMock = [
+		{
+			name: 'Ветеран',
 			description: 'Игра',
 			price: 1999,
 			discount: 15,
@@ -63,24 +101,6 @@ function initData() {
 			sale_start_at: '15 ноября 2018 00:00',
 			sale_finish_at: '25 ноября 2018 00:00',
 		},
-		/*{
-			name: 'ONE ROW TITLE',
-			price: 1999,
-			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
-			button_text: 'Купить',
-			button_text_mobile: 'Купить',
-			cashback: 5,
-			is_cashback_in_percent: true,
-		},
-		{
-			name: 'ONE ROW',
-			description: 'Description',
-			price: 1999,
-			discount: 15,
-			image_url: 'https://pp.userapi.com/c836125/v836125754/6661d/nOaF3744Mak.jpg',
-			button_text: 'Купить',
-			button_text_mobile: 'Купить',
-		},*/
 	]
 	let gameTitle = 'Far Cry 5'
 	let shareText = 'PLAYERUNKNOWN\\\'S BATTLEGROUNDS - отличная игра'
@@ -89,6 +109,15 @@ function initData() {
 		'Дайте отпор Иосифу Сиду и его братьям. Разожгите огонь сопротивления. Дайте отпор Иосифу Сиду и его братьям.' +
 		' Разожгите огонь сопротивления.'
 	store.dispatch(initGameList(gameTitle, gameDescription, gameListMock, shareText, shareImageUrl))
+}
+
+function initData() {
+	let coverListMock = [
+		{url: 'https://games-showcase.vkforms.ru/cover_1.jpeg'},
+		{url: 'https://games-showcase.vkforms.ru/cover_2.jpeg'},
+		{url: 'https://games-showcase.vkforms.ru/cover_3.jpeg'},
+	]
+	store.dispatch(initCoverList(coverListMock))
 	let warning = {text: 'Активация ключа возможна только на территории Российской Федерации и СНГ'}
 	store.dispatch(setWarning(warning))
 	let infoTitle = 'Информация об игре'

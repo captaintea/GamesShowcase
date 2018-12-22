@@ -9,7 +9,7 @@ class ShareButton extends Component {
 
 	share() {
 		let {imageUrl, shareText} = this.props
-		VkSdk.desktopShare(getAppLink(), imageUrl, shareText)
+		VkSdk.desktopShare(getAppLink(true), imageUrl, shareText)
 	}
 
 	render() {
